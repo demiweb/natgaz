@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27">
+  <g id="inst-ic" transform="translate(7039 608)">
+    <rect id="Rectangle_1600" data-name="Rectangle 1600" width="27" height="27" transform="translate(-7039 -608)" fill="none"/>
+    <g id="Group_661" data-name="Group 661" transform="translate(2 -25)">
+      <path id="Union_10" data-name="Union 10" d="M15,21H6a6.006,6.006,0,0,1-6-6V6A6.007,6.007,0,0,1,6,0h9a6.007,6.007,0,0,1,6,6v9A6.007,6.007,0,0,1,15,21ZM10.5,3A7.5,7.5,0,1,0,18,10.5,7.509,7.509,0,0,0,10.5,3Z" transform="translate(-7038 -580)" fill="#fff"/>
+      <circle id="Ellipse_972" data-name="Ellipse 972" cx="5.359" cy="5.359" r="5.359" transform="translate(-7032.865 -574.981)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
