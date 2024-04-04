@@ -107,74 +107,8 @@ function scrollAnimationsStage() {
 
 scrollAnimationsStage();
 
-//marquee
-var marqueeContent1 = document.querySelector(".marquee-cont1");
-
-function marqqueFnc1() {
-    if (marqueeContent1) {
-        var root = document.documentElement;
-        var marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue("--marquee-elements-displayed1");
-
-        let widthReal = 0;
-        let n = 0;
-
-        let allImg = [...marqueeContent1.querySelectorAll('div .img')];
-
-        allImg.forEach((imgs) => {
-            let wd = imgs.offsetWidth;
-
-            widthReal += wd;
-            widthReal += 1;
-            n += 1;
-        });
-
-        let realWidth = (widthReal / (window.innerWidth - n)) * 100;
-        console.log(widthReal + ' ' + realWidth + ' ' + window.innerWidth);
-        document.documentElement.style.setProperty('--marquee-width1', `${realWidth}%`);
-
-        root.style.setProperty("--marquee-elements1", marqueeContent1.children.length);
-
-        for (var i = 0; i < marqueeElementsDisplayed; i++) {
-            marqueeContent1.appendChild(marqueeContent1.children[i].cloneNode(true));
-        }
-    }
-}
-
-marqqueFnc1();
-
 
 //counter
-
-//scrolling img
-
-let scrollingImg = [...document.querySelectorAll('.scrolled-img')];
-
-function scrollParallaxImg() {
-    if (scrollingImg.length) {
-        scrollingImg.forEach((bg) => {
-            let toTop = bg.getBoundingClientRect().top;
-            let w = window.innerHeight;
-            // console.log(w);
-            let h = bg.offsetHeight;
-            let inc = bg.dataset.inc;
-            // console.log(h);
-
-            // if (toTop < w) {
-
-            bg.style.setProperty('--st', `${((toTop * (-1)) / w) * 100 * inc}%`);
-            // } else {
-            // bg.style.setProperty('--st', '0');
-            // }
-        })
-    }
-}
-
-scrollParallaxImg();
-
-$(window).scroll(function (e) {
-
-    scrollParallaxImg();
-});
 
 //video control
 
@@ -430,6 +364,46 @@ controlPlusText();
 
 //btn text
 
+//control select
+
+let selectOwner = [...document.querySelectorAll('.select-owner')];
+
+function controlSelect() {
+    if (selectOwner.length) {
+        selectOwner.forEach((sel) => {
+            let wavesSelect = [...sel.querySelectorAll('.single-waves-select')];
+
+            let selects = [...sel.querySelectorAll('.select-control ul li')];
+
+            let opener = sel.querySelector('.select-control > span');
+
+            opener.addEventListener('click', () => {
+                opener.closest('.select-control').classList.toggle('open');
+            });
+
+            selects.forEach((li, k) => {
+                li.addEventListener('click', () => {
+                    selects.forEach((btn2) => {
+                        btn2.classList.remove('selected');
+                    });
+                    wavesSelect.forEach((btn3) => {
+                        btn3.classList.remove('active');
+                    });
+                    li.classList.add('selected');
+                    li.closest('.select-control').classList.remove('open');
+                    wavesSelect[k].classList.add('active');
+
+                })
+            });
+
+        })
+    }
+}
+
+controlSelect();
+
+//control select
+
 //tabs
 
 
@@ -513,7 +487,7 @@ function startDirectSlider() {
             let pagin = sld.querySelector('.dots');
             const swiper2 = new Swiper(sldCont, {
                 // Optional parameters
-                loop: false,
+                loop: true,
                 grabCursor: true,
                 slidesPerView: 1,
                 slidesPerGroup: 1,
@@ -605,7 +579,6 @@ function startWaveSlider() {
 
                 resistance: true,
                 resistanceRatio: 0.3,
-                initialSlide: 1,
 
 
                 // cssMode: true,
@@ -618,11 +591,14 @@ function startWaveSlider() {
 
                 pagination: {
                     el: pagin,
-                    clickable: true,
+
                     className: 'wave-dot',
+                    type: 'bullets',
+                    bulletActiveClass: 'active',
                     renderBullet: function (index, className) {
-                        return '<span class="' + classWave + '">' + paginTexts[index].innerHTML + "</span>";
+                        return '<span class="' + className + '">' + paginTexts[index].innerHTML + "</span>";
                     },
+                    clickable: true,
                 },
 
                 breakpoints: {
@@ -767,13 +743,14 @@ $(window).scroll(function (e) {
 //modal window
 
 let btnMod = [...document.querySelectorAll('.btn-mod')];
+let textMod = [...document.querySelectorAll('.text-mod')];
 let modals = [...document.querySelectorAll('.modal-window')];
 let closeModal = [...document.querySelectorAll('.modal-close')];
 let clsSecModal = [...document.querySelectorAll('.modal-window .cls')];
 let backplates = [...document.querySelectorAll('.backplate')];
 
 function controlModal() {
-    if (btnMod.length) {
+    if (btnMod.length || textMod.length) {
         btnMod.forEach((btn) => {
             let data = btn.dataset.mod;
 
@@ -792,6 +769,36 @@ function controlModal() {
 
                         mod.classList.add('visible');
 
+                    }
+                })
+            })
+        });
+
+        textMod.forEach((btn) => {
+            let data = btn.dataset.mod;
+
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                let titleBtn = btn.closest('.dir-text__cont').querySelector('.text-plus .sub-title');
+                let textBtn = btn.closest('.dir-text__cont').querySelector('.text-plus .text');
+
+
+
+                if (document.querySelector('.modal-window.visible')) {
+                    document.querySelector('.modal-window.visible').classList.remove('visible');
+                }
+                modals.forEach((mod) => {
+                    if (mod.dataset.modal === data) {
+                        document.body.classList.add('no-scroll');
+
+                        mod.classList.add('visible');
+
+                        let modTitle = mod.querySelector('.modal-text-title .sub-title');
+                        let modText = mod.querySelector('.modal-text');
+
+                        modTitle.innerHTML = titleBtn.innerHTML;
+                        modText.innerHTML = textBtn.innerHTML;
                     }
                 })
             })
