@@ -544,6 +544,80 @@ function startDirectSlider() {
 startDirectSlider();
 
 
+let downloadSection = [...document.querySelectorAll('.download-esg')];
+
+function startDownloadSlider() {
+    if (!downloadSection.length) {
+
+    } else {
+
+        downloadSection.forEach((sld) => {
+            let sldCont = sld.querySelector('.swiper');
+            let sldNext = sld.querySelector('.slider-btn--next');
+            let sldPrev = sld.querySelector('.slider-btn--prev');
+            let pagin = sld.querySelector('.dots');
+            const swiper2 = new Swiper(sldCont, {
+                // Optional parameters
+                loop: false,
+                grabCursor: true,
+                slidesPerView: 1,
+                slidesPerGroup: 1,
+                speed: 300,
+                grid: {
+                    rows: 2,
+                },
+
+                crossFade: true,
+                followFinger: true,
+                allowTouchMove: true,
+                threshold: true,
+                touchMoveStopPropagation: true,
+                touchStartPreventDefault: true,
+                touchStartForcePreventDefault: true,
+                touchReleaseOnEdges: true,
+
+                resistance: true,
+                resistanceRatio: 0.3,
+
+
+                // cssMode: true,
+                navigation: {
+                    nextEl: sldNext,
+                    prevEl: sldPrev,
+                },
+                autoplay: false,
+                spaceBetween: 8,
+
+                pagination: {
+                    el: pagin,
+                    type: 'bullets',
+                    bulletActiveClass: 'active',
+                    bulletClass: 'single-dot',
+                    bulletElement: 'div',
+                    clickable: true,
+                    currentClass: 'current',
+                    spaceBetween: 2,
+                },
+
+                breakpoints: {
+                    767: {
+                        grid: false,
+                        slidesPerView: 4,
+                        spaceBetween: 16,
+                    }
+                }
+
+
+            });
+        })
+
+
+    }
+}
+
+startDownloadSlider();
+
+
 let waveSlider = [...document.querySelectorAll('.waves-slider-wrap')];
 
 function startWaveSlider() {
@@ -780,8 +854,8 @@ function controlModal() {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                let titleBtn = btn.closest('.dir-text__cont').querySelector('.text-plus .sub-title');
-                let textBtn = btn.closest('.dir-text__cont').querySelector('.text-plus .text');
+                let titleBtn = btn.closest('.plus-over').querySelector('.text-plus .sub-title');
+                let textBtn = btn.closest('.plus-over').querySelector('.text-plus .text');
 
 
 
@@ -793,12 +867,21 @@ function controlModal() {
                         document.body.classList.add('no-scroll');
 
                         mod.classList.add('visible');
+                        // console.log(data);
+                        if (data === 'img') {
+                            console.log('gagaga');
+                            let imgBtn = btn.closest('.plus-over').querySelector('.table-img img.mob');
+                            let modImg = mod.querySelector('.modal-image img');
+                            modImg.src = imgBtn.src;
+                        } else {
+                            let modTitle = mod.querySelector('.modal-text-title .sub-title');
+                            let modText = mod.querySelector('.modal-text');
 
-                        let modTitle = mod.querySelector('.modal-text-title .sub-title');
-                        let modText = mod.querySelector('.modal-text');
+                            modTitle.innerHTML = titleBtn.innerHTML;
+                            modText.innerHTML = textBtn.innerHTML;
+                        }
 
-                        modTitle.innerHTML = titleBtn.innerHTML;
-                        modText.innerHTML = textBtn.innerHTML;
+
                     }
                 })
             })
