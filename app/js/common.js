@@ -364,6 +364,26 @@ controlPlusText();
 
 //btn text
 
+// btn expand
+
+let btnExpand = [...document.querySelectorAll('.btn-expand')];
+
+function controlExpandText() {
+    if (btnExpand.length) {
+        btnExpand.forEach((btn) => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                btn.closest('.text-expand').classList.toggle('open');
+            });
+        });
+    }
+}
+
+controlExpandText();
+
+//btn expand
+
 //control select
 
 let selectOwner = [...document.querySelectorAll('.select-owner')];
@@ -737,9 +757,11 @@ function startSitesSliderMob() {
 
 
             });
+
+            swiper2.on('slideChange', () => {
+                $('.text-expand').removeClass('open');
+            })
         })
-
-
     }
 }
 
@@ -856,7 +878,6 @@ function controlModal() {
                 e.stopPropagation();
                 let titleBtn = btn.closest('.plus-over').querySelector('.text-plus .sub-title');
                 let textBtn = btn.closest('.plus-over').querySelector('.text-plus .text');
-
 
 
                 if (document.querySelector('.modal-window.visible')) {
