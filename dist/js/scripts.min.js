@@ -384,6 +384,27 @@ controlExpandText();
 
 //btn expand
 
+
+// btn expand
+
+let btnShare = [...document.querySelectorAll('.btn-share')];
+
+function controlShareText() {
+    if (btnShare.length) {
+        btnShare.forEach((btn) => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                btn.classList.toggle('open');
+            });
+        });
+    }
+}
+
+controlShareText();
+
+//btn expand
+
 //control select
 
 let selectOwner = [...document.querySelectorAll('.select-owner')];
