@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1640" height="360" viewBox="0 0 1640 360">
+  <g id="Group_666" data-name="Group 666" transform="translate(-140 -2418)">
+    <path id="Rectangle_1593" data-name="Rectangle 1593" d="M25,0H1201a25,25,0,0,1,25,25V91a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V25A25,25,0,0,1,25,0Z" transform="translate(140 2418)" fill="#b2d33c"/>
+    <path id="Rectangle_1594" data-name="Rectangle 1594" d="M0,0H1615a25,25,0,0,1,25,25V65a25,25,0,0,1-25,25H0a0,0,0,0,1,0,0V0A0,0,0,0,1,0,0Z" transform="translate(140 2509)" fill="#fcffef"/>
+    <path id="Rectangle_1597" data-name="Rectangle 1597" d="M0,0H1615a25,25,0,0,1,25,25V65a25,25,0,0,1-25,25H0a0,0,0,0,1,0,0V0A0,0,0,0,1,0,0Z" transform="translate(140 2599)" fill="#d5f2fc"/>
+    <path id="Rectangle_1596" data-name="Rectangle 1596" d="M0,0H1615a25,25,0,0,1,25,25V65a25,25,0,0,1-25,25H25A25,25,0,0,1,0,65V0A0,0,0,0,1,0,0Z" transform="translate(140 2688)" fill="#fcffef"/>
+    <text id="BCM" transform="translate(140 2453)" fill="#fff" font-size="20" font-family="Rubik-Bold, Rubik" font-weight="700"><tspan x="176.66" y="19">BCM</tspan></text>
+    <text id="_1" data-name="1" transform="translate(140 2537)" fill="#042844" font-size="20" font-family="Rubik-Regular, Rubik"><tspan x="194.72" y="19">1</tspan></text>
+    <text id="_1000" data-name="1000" transform="translate(140 2629)" fill="#042844" font-size="20" font-family="Rubik-Regular, Rubik"><tspan x="175.67" y="19">1000</tspan></text>
+    <text id="_35_982_081.32" data-name="35,982,081.32" transform="translate(140 2720)" fill="#042844" font-size="20" font-family="Rubik-Regular, Rubik"><tspan x="133.21" y="19">35,982,081.32</tspan></text>
+    <text id="mmBTU" transform="translate(968 2453)" fill="#fff" font-size="20" font-family="Rubik-Bold, Rubik" font-weight="700"><tspan x="160.17" y="19">mmBTU</tspan></text>
+    <text id="BCM-2" data-name="BCM" transform="translate(1549 2537)" fill="#042844" font-size="20" font-family="Rubik-Bold, Rubik" font-weight="700"><tspan x="81.66" y="19">BCM</tspan></text>
+    <text id="MCM_mmcm1_" data-name="MCM(mmcm1)" transform="translate(1549 2629)" fill="#042844" font-size="20" font-family="Rubik-Bold, Rubik" font-weight="700"><tspan x="36.681" y="19">MCM(mmcm</tspan><tspan y="19" font-size="11.666" baseline-shift="6.666000209254424">1</tspan><tspan y="19">)</tspan></text>
+    <text id="mmBTU-2" data-name="mmBTU" transform="translate(1549 2720)" fill="#042844" font-size="20" font-family="Rubik-Bold, Rubik" font-weight="700"><tspan x="65.17" y="19">mmBTU</tspan></text>
+    <text id="_35_982_081.32-2" data-name="35,982,081.32" transform="translate(968 2558)" fill="#042844" font-size="20" font-family="Rubik-Regular, Rubik"><tspan x="133.21" y="19">35,982,081.32</tspan></text>
+    <text id="_1-2" data-name="1" transform="translate(968 2520)" fill="#042844" font-size="20" font-family="Rubik-Regular, Rubik"><tspan x="194.72" y="19">1</tspan></text>
+    <text id="_35_982.08132" data-name="35,982.08132" transform="translate(968 2647)" fill="#042844" font-size="20" font-family="Rubik-Regular, Rubik"><tspan x="135.7" y="19">35,982.08132</tspan></text>
+    <text id="_1-3" data-name="1" transform="translate(968 2609)" fill="#042844" font-size="20" font-family="Rubik-Regular, Rubik"><tspan x="194.72" y="19">1</tspan></text>
+    <text id="_1-4" data-name="1" transform="translate(968 2720)" fill="#042844" font-size="20" font-family="Rubik-Regular, Rubik"><tspan x="194.72" y="19">1</tspan></text>
+    <text id="MCM" transform="translate(554 2453)" fill="#fff" font-size="20" font-family="Rubik-Bold, Rubik" font-weight="700"><tspan x="175.42" y="19">MCM</tspan></text>
+    <text id="_0.001" data-name="0.001" transform="translate(554 2537)" fill="#042844" font-size="20" font-family="Rubik-Regular, Rubik"><tspan x="173.45" y="19">0.001</tspan></text>
+    <text id="_1-5" data-name="1" transform="translate(554 2629)" fill="#042844" font-size="20" font-family="Rubik-Regular, Rubik"><tspan x="194.72" y="19">1</tspan></text>
+    <text id="_35_982.08132-2" data-name="35,982.08132" transform="translate(554 2720)" fill="#042844" font-size="20" font-family="Rubik-Regular, Rubik"><tspan x="135.7" y="19">35,982.08132</tspan></text>
+    <line id="Line_81" data-name="Line 81" x2="154" transform="translate(1090 2552)" fill="none" stroke="#042844" stroke-width="1"/>
+    <line id="Line_82" data-name="Line 82" x2="154" transform="translate(1090 2639)" fill="none" stroke="#042844" stroke-width="1"/>
+  </g>
+</svg>

@@ -110,6 +110,148 @@ scrollAnimationsStage();
 
 //counter
 
+
+//map control
+let imgMap = document.querySelector('.big-map-wrap .img img');
+
+
+function ifHaveMapMap() {
+    if (imgMap) {
+        if (window.innerWidth > 1900) {
+            let imgCntnrs = document.querySelector('.big-map-wrap .img');
+            let dragImgMouseStart = {};
+            let lastDiff = {x: 0, y: 0};
+            let initialPos = imgMap.getBoundingClientRect();
+            let currentPos = {x: 0, y: 0};
+            let counterWidth = imgCntnrs.offsetWidth;
+            let imgWidth = imgMap.offsetWidth;
+
+
+            let counterHeight = imgCntnrs.offsetHeight;
+            let imgHeight = imgMap.offsetHeight;
+
+            let differ = imgWidth - counterWidth;
+            let differ2 = imgHeight - counterHeight;
+
+            console.log(counterWidth + ' contur');
+            console.log(differ2 + ' differ2');
+
+            function mousedownDragImg(e) {
+                e.preventDefault();
+                dragImgMouseStart.x = e.clientX;
+                dragImgMouseStart.y = e.clientY;
+                currentPos.x += lastDiff.x;
+                currentPos.y += lastDiff.y;
+                lastDiff = {x: 0, y: 0};
+                window.addEventListener('mousemove', mousemoveDragImg);
+                window.addEventListener('mouseup', mouseupDragImg);
+
+                window.addEventListener('touchmove', mousemoveDragImg, {passive: false});
+                window.addEventListener('touchend', mouseupDragImg);
+            }
+
+
+            function mousemoveDragImg(e) {
+                e.preventDefault();
+
+                lastDiff.x = e.clientX - dragImgMouseStart.x;
+                lastDiff.y = e.clientY - dragImgMouseStart.y;
+
+                if (currentPos.x > differ) {
+                    currentPos.x = differ;
+                } else {
+                    if (currentPos.x < 0) {
+                        currentPos.x = 0;
+                    }
+                }
+
+                if (currentPos.y > 0) {
+                    currentPos.y = 0;
+                } else {
+                    if (currentPos.y < -differ2) {
+                        currentPos.y = -differ2;
+                    }
+                }
+
+
+                requestAnimationFrame(function () {
+
+                    let posiX = 0;
+                    let posiY = 0;
+                    // console.log(dragImgMouseStart.y + ' mause-start');
+                    // console.log(currentPos.y + ' mause-pos');
+                    // console.log(lastDiff.y + ' hm?0');
+
+                    if (currentPos.x + lastDiff.x > differ) {
+                        posiX = differ;
+                    } else {
+                        if (currentPos.x + lastDiff.x < 0) {
+                            posiX = 0;
+                        } else {
+                            posiX = currentPos.x + lastDiff.x;
+                        }
+                    }
+                    if (currentPos.y + lastDiff.y < -differ2) {
+                        posiY = -differ2;
+                    } else {
+                        if (currentPos.y + lastDiff.y > 0) {
+                            posiY = 0;
+                        } else {
+                            posiY = currentPos.y + lastDiff.y;
+                        }
+                    }
+
+                    imgMap.style.transform = "translate(" + (posiX) + "px," + (posiY) + "px)";
+
+
+                });
+            }
+
+            function mouseupDragImg(e) {
+                e.preventDefault();
+                window.removeEventListener('mousemove', mousemoveDragImg);
+                window.removeEventListener('mouseup', mouseupDragImg);
+
+                window.removeEventListener('touchmove', mousemoveDragImg);
+                window.removeEventListener('touchend', mouseupDragImg);
+            }
+
+            imgMap.addEventListener('mousedown', mousedownDragImg);
+
+            imgMap.addEventListener('touchstart', mousedownDragImg);
+        } else {
+            const position = { x: 0, y: 0 }
+            interact(imgMap)
+                .draggable({
+                    listeners: {
+                        start (event) {
+                            console.log(event.type, event.target)
+                        },
+                        move (event) {
+                            position.x += event.dx
+                            position.y += event.dy
+
+                            event.target.style.transform =
+                                `translate(${position.x}px, ${position.y}px)`
+                        },
+                    },
+                    restrict: {
+                        restriction: "parent",
+                        endOnly: true,
+                        elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
+                    },
+                });
+        }
+
+    }
+}
+
+ifHaveMapMap();
+
+
+//map control
+
+
 //video control
 
 $('body').on('mouseover', '.play-btn', function (e) {
