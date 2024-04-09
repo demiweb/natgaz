@@ -117,7 +117,7 @@ let imgMap = document.querySelector('.big-map-wrap .img img');
 
 function ifHaveMapMap() {
     if (imgMap) {
-        if (window.innerWidth > 1900) {
+        if (window.innerWidth > 767) {
             let imgCntnrs = document.querySelector('.big-map-wrap .img');
             let dragImgMouseStart = {};
             let lastDiff = {x: 0, y: 0};
@@ -133,8 +133,8 @@ function ifHaveMapMap() {
             let differ = imgWidth - counterWidth;
             let differ2 = imgHeight - counterHeight;
 
-            console.log(counterWidth + ' contur');
-            console.log(differ2 + ' differ2');
+            // console.log(counterWidth + ' contur');
+            // console.log(differ2 + ' differ2');
 
             function mousedownDragImg(e) {
                 e.preventDefault();
@@ -220,14 +220,14 @@ function ifHaveMapMap() {
 
             imgMap.addEventListener('touchstart', mousedownDragImg);
         } else {
-            const position = { x: 0, y: 0 }
+            const position = {x: 0, y: 0}
             interact(imgMap)
                 .draggable({
                     listeners: {
-                        start (event) {
+                        start(event) {
                             console.log(event.type, event.target)
                         },
-                        move (event) {
+                        move(event) {
                             position.x += event.dx
                             position.y += event.dy
 
@@ -238,7 +238,7 @@ function ifHaveMapMap() {
                     restrict: {
                         restriction: "parent",
                         endOnly: true,
-                        elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
+                        elementRect: {top: 0, left: 0, bottom: 1, right: 1}
                     },
                 });
         }
@@ -250,6 +250,103 @@ ifHaveMapMap();
 
 
 //map control
+
+//control table data
+
+let dataTable = document.querySelector('.speed-table-table');
+
+function controlDataTable() {
+    if (dataTable) {
+        let tableActive = dataTable.dataset.active;
+        let tableSelected = dataTable.dataset.selected;
+        let months = [...dataTable.querySelectorAll('.table-speed-month ul li')];
+        let infoList = dataTable.querySelector('.table-info__data ul');
+        let infoEmpty = dataTable.querySelector('.table-speed-empty');
+        let infoInfo = dataTable.querySelector('.table-speed-info');
+        let selectSpan = dataTable.querySelector('.table-select > span');
+        let selectUlLi = [...dataTable.querySelectorAll('.table-select ul li')];
+
+        let activeMassive = [];
+
+
+        //set active month
+        function addActiveInfo() {
+            months.forEach((mon) => {
+
+                if (Number(mon.innerHTML) === Number(tableSelected)) {
+                    mon.classList.add('selected');
+                } else {
+                    mon.classList.remove('selected');
+                }
+            });
+            yearMonthMassive.forEach((mas) => {
+                // console.log(toString(tableActive));
+                if (mas[tableActive]) {
+                    activeMassive = mas[tableActive][tableSelected - 1];
+                    infoList.innerHTML = '';
+                    console.log();
+                    if (activeMassive[tableSelected] === 'empty') {
+                        infoEmpty.classList.add('show');
+                        infoInfo.classList.add('hide');
+                    } else {
+                        infoEmpty.classList.remove('show');
+                        infoInfo.classList.remove('hide');
+                        activeMassive[tableSelected].forEach((info) => {
+                            let txt = Object.values(info);
+                            let li = document.createElement('li');
+                            li.innerHTML = txt[0];
+                            infoList.appendChild(li);
+                        })
+                    }
+
+
+                }
+            });
+        }
+
+        addActiveInfo();
+
+        // change active
+        months.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                months.forEach((btn2) => {
+                    btn2.classList.remove('selected');
+                });
+                btn.classList.add('selected');
+                dataTable.dataset.selected = Number(btn.innerHTML);
+                tableSelected = Number(btn.innerHTML);
+
+                addActiveInfo();
+            })
+        });
+
+        selectSpan.addEventListener('click', () => {
+            selectSpan.classList.toggle('open');
+        });
+
+        selectUlLi.forEach((li) => {
+            li.addEventListener('click', () => {
+                selectUlLi.forEach((li2) => {
+                    li2.classList.remove('selected');
+                });
+                li.classList.add('selected');
+                selectSpan.classList.remove('open');
+
+                dataTable.dataset.active = Number(li.innerHTML);
+                dataTable.dataset.selected = 1;
+
+                tableActive = dataTable.dataset.active;
+                tableSelected = dataTable.dataset.selected;
+                selectSpan.innerHTML = li.innerHTML;
+
+                addActiveInfo();
+            })
+        });
+    }
+}
+
+controlDataTable();
+//control table data
 
 
 //video control
@@ -594,7 +691,7 @@ controlSelect();
 $(".scroll-down").click(function (e) {
     e.preventDefault();
     e.stopPropagation();
-    let item = this.closest('.hero').nextElementSibling;
+    let item = this.closest('.btn-trigger').nextElementSibling;
     $([document.documentElement, document.body]).animate({
         scrollTop: $(item).offset().top
     }, 600);
@@ -687,7 +784,7 @@ function startDirectSlider() {
 
                 resistance: true,
                 resistanceRatio: 0.3,
-                initialSlide: 1,
+                initialSlide: 2,
 
 
                 // cssMode: true,
