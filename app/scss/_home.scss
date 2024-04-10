@@ -4210,12 +4210,12 @@ div:not(.footer-form) > .form {
       position: absolute;
       right: 0;
       top: 0;
+      transform: translate(294px, -698px);
 
     }
   }
 }
 
-//done px
 
 .big-map-block {
   .container {
@@ -4225,21 +4225,21 @@ div:not(.footer-form) > .form {
     justify-content: flex-start;
 
     .btn {
-      margin-top: 40px;
-      min-width: 260px;
+      margin-top: vw(40px);
+      min-width: vw(260px);
 
       p {
-        padding: 0 5px;
+        padding: 0 vw(5px);
       }
     }
 
     .btn {
       .ic {
-        width: 45px;
+        width: vw(45px);
 
         img {
           right: 0;
-          width: 28px;
+          width: vw(28px);
           transform: translate(0, -50%);
 
           &:nth-child(2) {
@@ -4263,10 +4263,10 @@ div:not(.footer-form) > .form {
   }
 
   & + .director-list {
-    padding-top: 120px;
+    padding-top: vw(120px);
 
     .directors-slider {
-      margin-top: 109px;
+      margin-top: vw(109px);
     }
   }
 }
@@ -4274,12 +4274,12 @@ div:not(.footer-form) > .form {
 
 .speed-table {
   width: 100%;
-  margin-top: 111px;
-  margin-bottom: 111px;
+  margin-top: vw(111px);
+  margin-bottom: vw(111px);
 }
 
 .speed-table-cont {
-  margin-top: 30px;
+  margin-top: vw(30px);
   width: 100%;
   display: flex;
   align-items: flex-start;
@@ -4288,7 +4288,7 @@ div:not(.footer-form) > .form {
 
 .speed-table-text {
   width: 100%;
-  max-width: 675px;
+  max-width: vw(675px);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -4300,8 +4300,8 @@ div:not(.footer-form) > .form {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    margin-top: -30px;
-    margin-bottom: 32px;
+    margin-top: vw(-30px);
+    margin-bottom: vw(32px);
 
     li {
       width: 100%;
@@ -4311,11 +4311,11 @@ div:not(.footer-form) > .form {
 
   p, li {
     font-weight: normal;
-    font-size: 20px;
+    font-size: vw(20px);
     line-height: 1.5;
     text-align: right;
     color: #042844;
-    margin-bottom: 30px;
+    margin-bottom: vw(30px);
 
     strong {
       font-weight: bold;
@@ -4329,30 +4329,30 @@ div:not(.footer-form) > .form {
 
 .table-speed-wrap {
   width: 100%;
-  border-radius: 25px;
+  border-radius: vw(25px);
   background: #fcffef;
   box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16);
-  padding: 27px 23px 0 0;
+  padding: vw(27px) vw(23px) 0 0;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  height: 430px;
+  height: vw(430px);
 
 }
 
 .speed-table-table {
-  width: 536px;
+  width: vw(536px);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding-top: 4px;
+  padding-top: vw(4px);
 
 
   .buttons {
     width: 100%;
-    margin-top: 26px;
-    gap: 22px;
+    margin-top: vw(26px);
+    gap: vw(22px);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -4368,17 +4368,17 @@ div:not(.footer-form) > .form {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 19px;
+  gap: vw(19px);
 
   > div {
     > p {
       font-weight: bold;
-      font-size: 20px;
+      font-size: vw(20px);
       line-height: 1.5;
       text-align: right;
       color: #042844;
-      margin-bottom: 10px;
-      margin-top: -3px;
+      margin-bottom: vw(10px);
+      margin-top: vw(-3px);
     }
   }
 }
@@ -4391,17 +4391,17 @@ div:not(.footer-form) > .form {
 
   ul {
     width: 100%;
-    max-width: 96px;
+    max-width: vw(96px);
     display: flex;
     direction: ltr;
     align-items: flex-start;
     justify-content: flex-start;
     flex-wrap: wrap;
-    gap: 20px 16px;
+    gap: vw(20px) vw(16px);
 
     li {
-      width: 40px;
-      height: 40px;
+      width: vw(40px);
+      height: vw(40px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -4411,8 +4411,8 @@ div:not(.footer-form) > .form {
 
 
       font-weight: normal;
-      font-size: 20px;
-      line-height: 30px;
+      font-size: vw(20px);
+      line-height: vw(30px);
       text-align: center;
       color: #042844;
 
@@ -4439,7 +4439,7 @@ div:not(.footer-form) > .form {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 17px;
+  gap: vw(17px);
   height: 100%;
 
   &.hide {
@@ -4452,11 +4452,11 @@ div:not(.footer-form) > .form {
   display: none;
   align-items: center;
   justify-content: center;
-  padding: 20px 60px;
+  padding: vw(20px) vw(60px);
 
   p {
     font-weight: 500;
-    font-size: 20px;
+    font-size: vw(20px);
     line-height: 1;
     text-align: center;
     color: #042844;
@@ -4468,7 +4468,7 @@ div:not(.footer-form) > .form {
 }
 
 .table-info__name, .table-info__data {
-  width: 122px;
+  width: vw(122px);
   display: flex;
   height: 100%;
 
@@ -4478,15 +4478,15 @@ div:not(.footer-form) > .form {
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-    padding-top: 36px;
+    padding-top: vw(36px);
     height: 100%;
-    padding-bottom: 48px;
+    padding-bottom: vw(48px);
 
     li {
       width: 100%;
 
       font-weight: normal;
-      font-size: 15px;
+      font-size: vw(15px);
       line-height: 1;
       text-align: center;
       color: #042844;
@@ -4501,10 +4501,11 @@ div:not(.footer-form) > .form {
 .table-info__name {
   ul {
     background: #008FC3;
-    border-radius: 20px 20px 0 0;
+    border-radius: vw(20px) vw(20px) 0 0;
 
     li {
       color: #fff;
+      padding: 0 vw(8px);
     }
   }
 }
@@ -4514,7 +4515,7 @@ div:not(.footer-form) > .form {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  width: 86px;
+  width: vw(86px);
 }
 
 .table-select {
@@ -4523,11 +4524,11 @@ div:not(.footer-form) > .form {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  margin-top: 7px;
+  margin-top: vw(7px);
 
   span, li {
     font-weight: normal;
-    font-size: 20px;
+    font-size: vw(20px);
     line-height: 1.5;
 
     color: #042844;
@@ -4550,8 +4551,8 @@ div:not(.footer-form) > .form {
       content: '';
       position: absolute;
       transition: all 0.3s ease-out;
-      width: 25px;
-      height: 13px;
+      width: vw(25px);
+      height: vw(13px);
       filter: brightness(0.1);
     }
 
@@ -4561,7 +4562,7 @@ div:not(.footer-form) > .form {
       }
 
       & ~ ul {
-        max-height: 305px;
+        max-height: vw(305px);
       }
     }
 
@@ -4598,10 +4599,10 @@ div:not(.footer-form) > .form {
 }
 
 .waves-slider-wrap.waves-slider-other {
-  padding-bottom: 190px;
+  padding-bottom: vw(190px);
 
   .hero-btn {
-    bottom: 72px;
+    bottom: vw(72px);
   }
 
   .wave-slide-cont {
@@ -4613,36 +4614,37 @@ div:not(.footer-form) > .form {
   }
 
   .btns-wrap {
-    top: 928px;
+    top: vw(928px);
   }
 
   .wave-text {
-    padding-top: 150px;
+    padding-top: vw(150px);
   }
 
   .pagin-wave-wrap {
-    margin-top: -183px;
+    margin-top: vw(-183px);
   }
 }
 
 .download-esg.download-esg-other {
-  margin-top: 63px;
-  margin-bottom: 154px;
+  margin-top: vw(63px);
+  margin-bottom: vw(154px);
 }
 
 .download-list {
   width: 100%;
-  margin-top: 74px;
-  gap: 17px;
+  margin-top: vw(74px);
+  gap: vw(17px);
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
 
   .slide-download {
-    width: calc((100% / 4) - ((17px * 3) / 4));
+    //17px
+    width: calc((100% / 4) - ((0.8854vw * 3) / 4));
 
     @media screen and (min-width: 768px) {
-      height: 165px;
+      height: vw(165px);
       .img {
         display: none;
       }
@@ -4654,8 +4656,67 @@ div:not(.footer-form) > .form {
         bottom: auto;
         right: auto;
         transform: none;
-        padding-top: 25px;
+        padding-top: vw(25px);
       }
     }
   }
 }
+
+
+.glossar {
+  &.glossar-work {
+    position: relative;
+    z-index: 2;
+    margin-top: vw(117px);
+    padding-top: vw(56px);
+    padding-bottom: vw(70px);
+    margin-bottom: vw(70px);
+
+    .glossar-block {
+      gap: vw(15px);
+      padding-right: vw(123px);
+      padding-left: 0;
+
+      .img {
+        margin-top: vw(9px);
+
+        img {
+          width: vw(76px);
+        }
+      }
+    }
+
+    .glossar-block .text {
+      max-width: vw(812px);
+
+      .sub-title {
+        color: $blue;
+      }
+
+      > p {
+        font-weight: normal;
+        font-size: vw(20px);
+        line-height: vw(30px);
+        text-align: right;
+        color: #042844;
+        margin-top: vw(-7px);
+      }
+
+      .btn {
+        margin-top: vw(-3px);
+        min-width: vw(536px);
+      }
+    }
+
+    & ~ .news-block {
+      margin-bottom: vw(133px);
+
+      .sub-title {
+        display: inline-block;
+        margin-bottom: vw(67px);
+      }
+    }
+  }
+}
+
+//done px

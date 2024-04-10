@@ -118,114 +118,143 @@ let imgMap = document.querySelector('.big-map-wrap .img img');
 function ifHaveMapMap() {
     if (imgMap) {
         if (window.innerWidth > 767) {
-            let imgCntnrs = document.querySelector('.big-map-wrap .img');
-            let dragImgMouseStart = {};
-            let lastDiff = {x: 0, y: 0};
-            let initialPos = imgMap.getBoundingClientRect();
-            let currentPos = {x: 0, y: 0};
-            let counterWidth = imgCntnrs.offsetWidth;
-            let imgWidth = imgMap.offsetWidth;
 
-
-            let counterHeight = imgCntnrs.offsetHeight;
-            let imgHeight = imgMap.offsetHeight;
-
-            let differ = imgWidth - counterWidth;
-            let differ2 = imgHeight - counterHeight;
-
-            // console.log(counterWidth + ' contur');
-            // console.log(differ2 + ' differ2');
-
-            function mousedownDragImg(e) {
-                e.preventDefault();
-                dragImgMouseStart.x = e.clientX;
-                dragImgMouseStart.y = e.clientY;
-                currentPos.x += lastDiff.x;
-                currentPos.y += lastDiff.y;
-                lastDiff = {x: 0, y: 0};
-                window.addEventListener('mousemove', mousemoveDragImg);
-                window.addEventListener('mouseup', mouseupDragImg);
-
-                window.addEventListener('touchmove', mousemoveDragImg, {passive: false});
-                window.addEventListener('touchend', mouseupDragImg);
-            }
-
-
-            function mousemoveDragImg(e) {
-                e.preventDefault();
-
-                lastDiff.x = e.clientX - dragImgMouseStart.x;
-                lastDiff.y = e.clientY - dragImgMouseStart.y;
-
-                if (currentPos.x > differ) {
-                    currentPos.x = differ;
-                } else {
-                    if (currentPos.x < 0) {
-                        currentPos.x = 0;
-                    }
-                }
-
-                if (currentPos.y > 0) {
-                    currentPos.y = 0;
-                } else {
-                    if (currentPos.y < -differ2) {
-                        currentPos.y = -differ2;
-                    }
-                }
-
-
-                requestAnimationFrame(function () {
-
-                    let posiX = 0;
-                    let posiY = 0;
-                    // console.log(dragImgMouseStart.y + ' mause-start');
-                    // console.log(currentPos.y + ' mause-pos');
-                    // console.log(lastDiff.y + ' hm?0');
-
-                    if (currentPos.x + lastDiff.x > differ) {
-                        posiX = differ;
-                    } else {
-                        if (currentPos.x + lastDiff.x < 0) {
-                            posiX = 0;
-                        } else {
-                            posiX = currentPos.x + lastDiff.x;
-                        }
-                    }
-                    if (currentPos.y + lastDiff.y < -differ2) {
-                        posiY = -differ2;
-                    } else {
-                        if (currentPos.y + lastDiff.y > 0) {
-                            posiY = 0;
-                        } else {
-                            posiY = currentPos.y + lastDiff.y;
-                        }
-                    }
-
-                    imgMap.style.transform = "translate(" + (posiX) + "px," + (posiY) + "px)";
-
-
-                });
-            }
-
-            function mouseupDragImg(e) {
-                e.preventDefault();
-                window.removeEventListener('mousemove', mousemoveDragImg);
-                window.removeEventListener('mouseup', mouseupDragImg);
-
-                window.removeEventListener('touchmove', mousemoveDragImg);
-                window.removeEventListener('touchend', mouseupDragImg);
-            }
-
-            imgMap.addEventListener('mousedown', mousedownDragImg);
-
-            imgMap.addEventListener('touchstart', mousedownDragImg);
-        } else {
-            const position = {x: 0, y: 0}
+            // 294px, -698px
+            let position = {x: 294, y: -698};
             interact(imgMap)
                 .draggable({
                     listeners: {
                         start(event) {
-                            console.log(event.type, event.target)
+                            // console.log(event.type, event.target)
+                            event.target.style.transform =
+                                `translate(${position.x}px, ${position.y}px)`
+                        },
+                        move(event) {
+                            position.x += event.dx
+                            position.y += event.dy
+
+                            event.target.style.transform =
+                                `translate(${position.x}px, ${position.y}px)`
+                        },
+                    },
+                    restrict: {
+                        restriction: "parent",
+                        endOnly: true,
+                        elementRect: {top: 0, left: 0, bottom: 1, right: 1}
+                    },
+                });
+
+
+            // let imgCntnrs = document.querySelector('.big-map-wrap .img');
+            // let dragImgMouseStart = {};
+            // let lastDiff = {x: 0, y: 0};
+            // let initialPos = imgMap.getBoundingClientRect();
+            // let currentPos = {x: 0, y: 0};
+            // let counterWidth = imgCntnrs.offsetWidth;
+            // let imgWidth = imgMap.offsetWidth;
+            //
+            //
+            // let counterHeight = imgCntnrs.offsetHeight;
+            // let imgHeight = imgMap.offsetHeight;
+            //
+            // let differ = imgWidth - counterWidth;
+            // let differ2 = imgHeight - counterHeight;
+            //
+            // // console.log(counterWidth + ' contur');
+            // // console.log(differ2 + ' differ2');
+            //
+            // function mousedownDragImg(e) {
+            //     e.preventDefault();
+            //     dragImgMouseStart.x = e.clientX;
+            //     dragImgMouseStart.y = e.clientY;
+            //     currentPos.x += lastDiff.x;
+            //     currentPos.y += lastDiff.y;
+            //     lastDiff = {x: 0, y: 0};
+            //     window.addEventListener('mousemove', mousemoveDragImg);
+            //     window.addEventListener('mouseup', mouseupDragImg);
+            //
+            //     window.addEventListener('touchmove', mousemoveDragImg, {passive: false});
+            //     window.addEventListener('touchend', mouseupDragImg);
+            // }
+            //
+            //
+            // function mousemoveDragImg(e) {
+            //     e.preventDefault();
+            //
+            //     lastDiff.x = e.clientX - dragImgMouseStart.x;
+            //     lastDiff.y = e.clientY - dragImgMouseStart.y;
+            //
+            //     if (currentPos.x > differ) {
+            //         currentPos.x = differ;
+            //     } else {
+            //         if (currentPos.x < 0) {
+            //             currentPos.x = 0;
+            //         }
+            //     }
+            //
+            //     if (currentPos.y > 0) {
+            //         currentPos.y = 0;
+            //     } else {
+            //         if (currentPos.y < -differ2) {
+            //             currentPos.y = -differ2;
+            //         }
+            //     }
+            //
+            //
+            //     requestAnimationFrame(function () {
+            //
+            //         let posiX = 0;
+            //         let posiY = 0;
+            //         // console.log(dragImgMouseStart.y + ' mause-start');
+            //         // console.log(currentPos.y + ' mause-pos');
+            //         // console.log(lastDiff.y + ' hm?0');
+            //
+            //         if (currentPos.x + lastDiff.x > differ) {
+            //             posiX = differ;
+            //         } else {
+            //             if (currentPos.x + lastDiff.x < 0) {
+            //                 posiX = 0;
+            //             } else {
+            //                 posiX = currentPos.x + lastDiff.x;
+            //             }
+            //         }
+            //         if (currentPos.y + lastDiff.y < -differ2) {
+            //             posiY = -differ2;
+            //         } else {
+            //             if (currentPos.y + lastDiff.y > 0) {
+            //                 posiY = 0;
+            //             } else {
+            //                 posiY = currentPos.y + lastDiff.y;
+            //             }
+            //         }
+            //
+            //         imgMap.style.transform = "translate(" + (posiX) + "px," + (posiY) + "px)";
+            //
+            //
+            //     });
+            // }
+            //
+            // function mouseupDragImg(e) {
+            //     e.preventDefault();
+            //     window.removeEventListener('mousemove', mousemoveDragImg);
+            //     window.removeEventListener('mouseup', mouseupDragImg);
+            //
+            //     window.removeEventListener('touchmove', mousemoveDragImg);
+            //     window.removeEventListener('touchend', mouseupDragImg);
+            // }
+            //
+            // imgMap.addEventListener('mousedown', mousedownDragImg);
+            //
+            // imgMap.addEventListener('touchstart', mousedownDragImg);
+        } else {
+            let position = {x: -620, y: -406};
+            interact(imgMap)
+                .draggable({
+                    listeners: {
+                        start(event) {
+                            // console.log(event.type, event.target)
+                            event.target.style.transform =
+                                `translate(${position.x}px, ${position.y}px)`
                         },
                         move(event) {
                             position.x += event.dx
@@ -242,7 +271,7 @@ function ifHaveMapMap() {
                     },
                 });
         }
-
+        // -620px, -406.25px
     }
 }
 
@@ -265,9 +294,16 @@ function controlDataTable() {
         let infoInfo = dataTable.querySelector('.table-speed-info');
         let selectSpan = dataTable.querySelector('.table-select > span');
         let selectUlLi = [...dataTable.querySelectorAll('.table-select ul li')];
+        let pMobile = [...dataTable.querySelectorAll('.table-speed-control > div > p')];
+
+        let mobYear = dataTable.querySelector('.display-year-month .year span');
+        let mobMonth = dataTable.querySelector('.display-year-month .month span');
+
 
         let activeMassive = [];
 
+        mobMonth.innerHTML = tableSelected;
+        mobYear.innerHTML = tableActive;
 
         //set active month
         function addActiveInfo() {
@@ -302,6 +338,8 @@ function controlDataTable() {
 
                 }
             });
+            mobMonth.innerHTML = tableSelected;
+            mobYear.innerHTML = tableActive;
         }
 
         addActiveInfo();
@@ -315,6 +353,10 @@ function controlDataTable() {
                 btn.classList.add('selected');
                 dataTable.dataset.selected = Number(btn.innerHTML);
                 tableSelected = Number(btn.innerHTML);
+
+
+                btn.closest('.for-mob').classList.remove('open');
+
 
                 addActiveInfo();
             })
@@ -339,9 +381,16 @@ function controlDataTable() {
                 tableSelected = dataTable.dataset.selected;
                 selectSpan.innerHTML = li.innerHTML;
 
+                li.closest('.for-mob').classList.remove('open');
                 addActiveInfo();
             })
         });
+
+        pMobile.forEach((p) => {
+            p.addEventListener('click', () => {
+                p.closest('div').classList.toggle('open');
+            })
+        })
     }
 }
 
@@ -613,6 +662,12 @@ function controlExpandText() {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
                 e.stopPropagation();
+                btnExpand.forEach((btn2) => {
+                    if (btn2 !== btn) {
+                        btn2.closest('.text-expand').classList.remove('open');
+                    }
+
+                });
                 btn.closest('.text-expand').classList.toggle('open');
             });
         });
@@ -1044,34 +1099,63 @@ function startNewsSlider() {
                 let sldNext = sld.querySelector('.slider-btn--next');
                 let sldPrev = sld.querySelector('.slider-btn--prev');
                 let pagin = sld.querySelector('.dots');
-                const swiper2 = new Swiper(sldCont, {
-                    // Optional parameters
-                    grabCursor: true,
-                    slidesPerView: 1,
-                    grid: {
-                        rows: 3,
-                    },
-                    speed: 800,
+                if (sld.closest('.news-block-mobile-other')) {
+                    const swiper2 = new Swiper(sldCont, {
+                        // Optional parameters
+                        grabCursor: true,
+                        slidesPerView: 1,
+
+                        speed: 800,
 
 
-                    // cssMode: true,
-                    navigation: false,
-                    autoplay: false,
-                    spaceBetween: 14,
+                        // cssMode: true,
+                        navigation: false,
+                        autoplay: false,
+                        spaceBetween: 14,
 
-                    pagination: {
-                        el: pagin,
-                        type: 'bullets',
-                        bulletActiveClass: 'active',
-                        bulletClass: 'single-dot',
-                        bulletElement: 'div',
-                        clickable: true,
-                        currentClass: 'current',
-                        spaceBetween: 2,
-                    },
+                        pagination: {
+                            el: pagin,
+                            type: 'bullets',
+                            bulletActiveClass: 'active',
+                            bulletClass: 'single-dot',
+                            bulletElement: 'div',
+                            clickable: true,
+                            currentClass: 'current',
+                            spaceBetween: 2,
+                        },
 
 
-                });
+                    });
+                } else {
+                    const swiper2 = new Swiper(sldCont, {
+                        // Optional parameters
+                        grabCursor: true,
+                        slidesPerView: 1,
+                        grid: {
+                            rows: 3,
+                        },
+                        speed: 800,
+
+
+                        // cssMode: true,
+                        navigation: false,
+                        autoplay: false,
+                        spaceBetween: 14,
+
+                        pagination: {
+                            el: pagin,
+                            type: 'bullets',
+                            bulletActiveClass: 'active',
+                            bulletClass: 'single-dot',
+                            bulletElement: 'div',
+                            clickable: true,
+                            currentClass: 'current',
+                            spaceBetween: 2,
+                        },
+
+
+                    });
+                }
             })
         }
 

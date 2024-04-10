@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="337" height="269" viewBox="0 0 337 269">
+  <g id="Group_796" data-name="Group 796" transform="translate(0 -93)">
+    <g id="Group_784" data-name="Group 784" transform="translate(640.467 -1850)">
+      <path id="Rectangle_1594" data-name="Rectangle 1594" d="M25,0H312a25,25,0,0,1,25,25V65a25,25,0,0,1-25,25H0a0,0,0,0,1,0,0V25A25,25,0,0,1,25,0Z" transform="translate(-640.467 1943)" fill="#fcffef"/>
+      <path id="Rectangle_1597" data-name="Rectangle 1597" d="M0,0H312a25,25,0,0,1,25,25V65a25,25,0,0,1-25,25H0a0,0,0,0,1,0,0V0A0,0,0,0,1,0,0Z" transform="translate(-640.467 2033)" fill="#d5f2fc"/>
+      <path id="Rectangle_1596" data-name="Rectangle 1596" d="M0,0H312a25,25,0,0,1,25,25V65a25,25,0,0,1-25,25H25A25,25,0,0,1,0,65V0A0,0,0,0,1,0,0Z" transform="translate(-640.467 2122)" fill="#fcffef"/>
+      <text id="BCM" transform="translate(-412.467 1971)" fill="#042844" font-size="20" font-family="Rubik-Bold, Rubik" font-weight="700"><tspan x="32.16" y="19">BCM</tspan></text>
+      <text id="MCM_mmcm1_" data-name="MCM
+(mmcm1)" transform="translate(-412.467 2051)" fill="#042844" font-size="20" font-family="Rubik-Bold, Rubik" font-weight="700"><tspan x="30.92" y="19">MCM</tspan><tspan x="10.761" y="41">(mmcm</tspan><tspan y="41" font-size="11.666" baseline-shift="6.666000209254424">1</tspan><tspan y="41">)</tspan></text>
+      <text id="mmBTU" transform="translate(-412.467 2154)" fill="#042844" font-size="20" font-family="Rubik-Bold, Rubik" font-weight="700"><tspan x="15.67" y="19">mmBTU</tspan></text>
+    </g>
+    <text id="_1" data-name="1" transform="translate(6 304)" fill="#042844" font-size="20" font-family="Rubik-Regular, Rubik"><tspan x="75.72" y="19">1</tspan></text>
+    <g id="Group_786" data-name="Group 786" transform="translate(-11 -1827)">
+      <text id="_1-2" data-name="1" transform="translate(11 1935)" fill="#042844" font-size="20" font-family="Rubik-Regular, Rubik"><tspan x="78.72" y="19">1</tspan></text>
+      <text id="_35_982_081.32" data-name="35,982,081.32" transform="translate(11 1968)" fill="#042844" font-size="20" font-family="Rubik-Regular, Rubik"><tspan x="17.21" y="19">35,982,081.32</tspan></text>
+      <line id="Line_79" data-name="Line 79" x2="152" transform="translate(18.5 1964.5)" fill="none" stroke="#042844" stroke-width="1"/>
+    </g>
+    <g id="Group_785" data-name="Group 785" transform="translate(-11 -1827)">
+      <text id="_1-3" data-name="1" transform="translate(11 2026)" fill="#042844" font-size="20" font-family="Rubik-Regular, Rubik"><tspan x="78.72" y="19">1</tspan></text>
+      <text id="_35_982.08132" data-name="35,982.08132" transform="translate(11 2059)" fill="#042844" font-size="20" font-family="Rubik-Regular, Rubik"><tspan x="19.7" y="19">35,982.08132</tspan></text>
+      <line id="Line_80" data-name="Line 80" x2="152" transform="translate(18.5 2055.5)" fill="none" stroke="#042844" stroke-width="1"/>
+    </g>
+  </g>
+</svg>
