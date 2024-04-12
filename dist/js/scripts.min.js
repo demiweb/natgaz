@@ -398,101 +398,6 @@ controlDataTable();
 //control table data
 
 
-//video control
-
-$('body').on('mouseover', '.play-btn', function (e) {
-
-    this.closest('.video-cont').querySelector('video').play();
-});
-$('body').on('mouseout', '.play-btn', function (e) {
-    // console.log($(this));
-    if (this.closest('.video-cont').classList.contains('play')) {
-
-    } else {
-        this.closest('.video-cont').querySelector('video').pause();
-        this.closest('.video-cont').querySelector('video').currentTime = 0;
-    }
-});
-
-
-$('body').on('click', '.play-btn', function (e) {
-    if (this.closest('.video-cont').classList.contains('play')) {
-        this.closest('.video-cont').classList.remove('play');
-        this.closest('.video-cont').querySelector('video').pause();
-        this.closest('.video-cont').querySelector('video').currentTime = 0;
-        this.closest('.video-cont').querySelector('video').muted = true;
-    } else {
-        [...document.querySelectorAll('.play-btn')].forEach((btn) => {
-            if (btn === this) {
-
-            } else {
-                btn.closest('.video-cont').classList.remove('play');
-                btn.closest('.video-cont').querySelector('video').pause();
-                btn.closest('.video-cont').querySelector('video').currentTime = 0;
-                btn.closest('.video-cont').querySelector('video').muted = true;
-            }
-        });
-        this.closest('.video-cont').classList.add('play');
-        this.closest('.video-cont').querySelector('video').play();
-        this.closest('.video-cont').querySelector('video').currentTime = 0;
-        this.closest('.video-cont').querySelector('video').muted = false;
-    }
-});
-
-
-//video control
-
-//map control
-
-let mapSections = [...document.querySelectorAll('.map-sec')];
-let locSections = [...document.querySelectorAll('.single-location')];
-
-function controlMapSections() {
-    if (mapSections.length) {
-        mapSections.forEach((sec) => {
-            let dat = sec.dataset.sec;
-
-            if (window.innerWidth > 1025) {
-
-
-                sec.addEventListener('mouseover', () => {
-                    document.querySelector('.locations-list').classList.add('hover');
-                    document.querySelector(`.single-location[data-loc="${dat}"]`).classList.add('active');
-                });
-                sec.addEventListener('mouseout', () => {
-                    document.querySelector('.locations-list').classList.remove('hover');
-                    locSections.forEach((loc) => {
-                        loc.classList.remove('active');
-                    })
-                });
-            }
-            if (window.innerWidth < 1026) {
-                sec.addEventListener('click', () => {
-
-                    if (document.querySelector(`.single-location[data-loc="${dat}"]`).classList.contains('active')) {
-                        document.querySelector('.locations-list').classList.remove('hover');
-                        [...document.querySelectorAll(`.single-location`)].forEach((sc) => {
-                            sc.classList.remove('active');
-                        });
-                    } else {
-                        [...document.querySelectorAll(`.single-location`)].forEach((sc) => {
-                            sc.classList.remove('active');
-                        });
-                        document.querySelector('.locations-list').classList.add('hover');
-                        document.querySelector(`.single-location[data-loc="${dat}"]`).classList.toggle('active');
-                    }
-
-                });
-            }
-
-        })
-    }
-}
-
-controlMapSections();
-
-//map control
-
 //scrolling img
 
 
@@ -1184,13 +1089,14 @@ $(window).scroll(function (e) {
 
 let btnMod = [...document.querySelectorAll('.btn-mod')];
 let textMod = [...document.querySelectorAll('.text-mod')];
+let modJobs = [...document.querySelectorAll('.mod-jobs')];
 let modals = [...document.querySelectorAll('.modal-window')];
 let closeModal = [...document.querySelectorAll('.modal-close')];
 let clsSecModal = [...document.querySelectorAll('.modal-window .cls')];
 let backplates = [...document.querySelectorAll('.backplate')];
 
 function controlModal() {
-    if (btnMod.length || textMod.length) {
+    if (btnMod.length || textMod.length || modJobs.length) {
         btnMod.forEach((btn) => {
             let data = btn.dataset.mod;
 
@@ -1234,7 +1140,7 @@ function controlModal() {
                         mod.classList.add('visible');
                         // console.log(data);
                         if (data === 'img') {
-                            console.log('gagaga');
+                            // console.log('gagaga');
                             let imgBtn = btn.closest('.plus-over').querySelector('.table-img img.mob');
                             let modImg = mod.querySelector('.modal-image img');
                             modImg.src = imgBtn.src;
@@ -1251,6 +1157,48 @@ function controlModal() {
                 })
             })
         });
+        modJobs.forEach((btn) => {
+            let data = btn.dataset.mod;
+
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                let rightText = btn.closest('.job-mod-owner').querySelector('.text');
+                let leftText = btn.closest('.job-mod-owner').querySelector('.hidden-wrap');
+                let hiddenId = btn.closest('.job-mod-owner').dataset.id;
+
+
+                if (document.querySelector('.modal-window.visible')) {
+                    document.querySelector('.modal-window.visible').classList.remove('visible');
+                }
+                modals.forEach((mod) => {
+                    if (mod.dataset.modal === data) {
+                        document.body.classList.add('no-scroll');
+
+                        mod.classList.add('visible');
+                        // console.log(data);
+
+                        let modRight = mod.querySelector('.job-content-right');
+                        let modLeft = mod.querySelector('.job-content-columns');
+                        let hiddenIdInput = mod.querySelector('.id-input input');
+
+                        if (data === 'auction') {
+
+                            let modLoad = btn.closest('.job-mod-owner').querySelector('.hidden-load');
+                            let modLoadInner = mod.querySelector('.auction-modal-bot');
+                            modLoadInner.innerHTML = modLoad.innerHTML;
+                        }
+
+                        modRight.innerHTML = rightText.innerHTML;
+                        modLeft.innerHTML = leftText.innerHTML;
+                        hiddenIdInput.value = Number(hiddenId);
+
+
+                    }
+                })
+            })
+        });
+
 
         backplates.forEach((btn) => {
             btn.addEventListener('click', () => {
@@ -1269,6 +1217,7 @@ function controlModal() {
 
             })
         });
+
 
     }
 }
@@ -1326,9 +1275,41 @@ changefaq();
 //faq
 
 
+$('.filter-select select').niceSelect();
+
+let sortUlLi = [...document.querySelectorAll('.filter-select ul li')];
+
+function sortSelectClick() {
+    if (!sortUlLi.length) {
+
+    } else {
+        sortUlLi.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                let optValue = btn.dataset.value;
+                let event2 = new Event('change');
+                let event3 = new Event('click');
+                let event4 = new Event('change');
+                let suggestOpt = document.querySelector(`option[value='${optValue}']`);
+                // btn.closest('.sort-selector').querySelector('select option[selected]').removeAttribute('selected');
+
+                suggestOpt.selected = 'selected';
+                suggestOpt.setAttribute('selected', 'selected');
+                suggestOpt.click();
+                console.log(btn.closest('.filter-select').querySelector('select'));
+                console.log(suggestOpt);
+                // $('select.sort-select').niceSelect();
+            })
+        })
+    }
+}
+
+sortSelectClick();
+
+
 //tabs
 
 let tabBtn = [...document.querySelectorAll('.tab-btn')];
+let selectTab = [...document.querySelectorAll('.select-tab .list li')];
 
 function changeTab() {
     if (!tabBtn.length) {
@@ -1350,19 +1331,32 @@ function changeTab() {
                             tab.classList.add('active');
                             if (window.innerWidth < 768) {
                                 setTimeout(() => {
-                                    $([document.documentElement, document.body]).animate({
-                                        scrollTop: $(btn).offset().top
-                                    }, 400);
+                                    // $([document.documentElement, document.body]).animate({
+                                    //     scrollTop: $(btn).offset().top
+                                    // }, 400);
                                 }, 310);
                             }
                         } else {
                             tab.classList.remove('active');
 
                         }
-                    })
+                    });
+
+                    if (selectTab.length) {
+                        selectTab[k].click();
+                    }
                 }
             })
-        })
+        });
+
+        if (selectTab.length) {
+            selectTab.forEach((btn, k) => {
+                btn.addEventListener('click', (e) => {
+
+                    tabBtn[k].click();
+                })
+            });
+        }
     }
 }
 
@@ -1370,4 +1364,6 @@ changeTab();
 
 
 //tabs
+
+
 
