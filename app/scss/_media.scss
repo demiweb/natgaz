@@ -3689,7 +3689,121 @@
     }
   }
 
+
+  .hero.hero-dict .default-hero h1 {
+    max-width: 90%;
+  }
+  .jobs-block.dict-block {
+    margin-top: vw(90px);
+
+    .jobs-block__cont {
+      gap: vw(27px);
+    }
+
+    .filter-jobs {
+      padding: vw(28px) vw(11px) vw(36px);
+    }
+  }
+  .hero.hero-dict {
+    .default-hero {
+      margin-top: vw(178px);
+    }
+  }
+  .dict-list {
+    gap: vw(10px);
+  }
+  .single-dict {
+    border-radius: vw(25px);
+    padding: vw(23px) vw(18px) vw(10px) vw(34px);
+
+    .text-plus {
+      width: 100%;
+      max-width: 100%;
+
+      .btn-plus {
+        left: vw(10px);
+        bottom: vw(10px);
+      }
+
+      .text {
+        width: 100%;
+        max-width: 100%;
+
+        span {
+          font-size: vw(20px);
+          line-height: 1.15;
+          margin-bottom: vw(14px);
+        }
+
+        p {
+          font-size: vw(16px);
+          line-height: 1.375;
+          margin-bottom: vw(25px);
+        }
+      }
+    }
+  }
+
+  .pagin-block {
+    margin-top: vw(40px);
+
+    .pagination {
+      gap: vw(10px);
+
+      li {
+        width: vw(50px);
+        height: vw(50px);
+
+        span, a {
+          font-size: vw(16px);
+
+          &::before, &::after {
+            width: vw(20px);
+          }
+        }
+
+        &.prev, &.next {
+          a, span {
+            &::before, &::after {
+              width: vw(25px);
+              height: vw(14px);
+            }
+          }
+        }
+      }
+    }
+  }
+  .jobs-block.dict-block {
+    margin-bottom: vw(90px);
+  }
+  .hero.hero-legal {
+    height: vw(129px);
+  }
+  .legal-block {
+    margin-top: vw(-45px);
+    padding-bottom: vw(100px);
+
+    .container {
+      padding: 0 vw(11px);
+    }
+
+    .article-text {
+      max-width: 100%;
+      width: 100%;
+
+      h1 {
+        font-size: vw(30px);
+      }
+    }
+  }
+  .legal-block .article-text h2, .legal-block .article-text h3 {
+    margin-top: vw(47px);
+  }
+
   //  done px
+  .single-dict .text-plus.open .hidden-text {
+    max-height: 600px;
+  }
 }
 
 

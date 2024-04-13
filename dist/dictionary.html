@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="uk" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./css/main.min.css">
+</head>
+<body class="home">
+<header class="header ">
+
+    <div class="header-top">
+        <div class="container">
+            <div class="header-top-cont">
+                <div class="logo">
+                    <a href="">
+                        <img src="./img/header-logo.svg" alt="">
+                    </a>
+                </div>
+
+                <div class="header-controls">
+                    <div class="header-lang">
+                        <ul>
+                            <li>
+                                <span>
+                                    <span data-name="עב">עב</span>
+                                </span>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span data-name="En">En</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="header-sos">
+                        <a href="">
+                            <svg id="sos" xmlns="http://www.w3.org/2000/svg" width="50" height="42" viewBox="0 0 50 42">
+                                <path id="Path_97" data-name="Path 97"
+                                      d="M150.668,94.19a7.1,7.1,0,0,0,2.2.767c.105.025.183.043.228.052l.063.014c2.254.519,2.591,1.084,2.591,1.374a.917.917,0,0,1-.38.809,2.277,2.277,0,0,1-1.3.3,2.7,2.7,0,0,1-1.57-.38,1.368,1.368,0,0,1-.456-.564,1.318,1.318,0,0,0-1.188-.788h-.089a1.3,1.3,0,0,0-1.187,1.822,3.428,3.428,0,0,0,.974,1.287,6.052,6.052,0,0,0,6.619.018,3.418,3.418,0,0,0,1.21-2.785,3.233,3.233,0,0,0-.355-1.555,2.67,2.67,0,0,0-1.071-1.061,5.389,5.389,0,0,0-.89-.389c-.333-.114-.879-.268-1.674-.472l-.767-.182c-.741-.172-1.623-.491-1.623-1.032a.878.878,0,0,1,.364-.763,2.012,2.012,0,0,1,1.182-.292,2.256,2.256,0,0,1,1.376.357,1.167,1.167,0,0,1,.371.472,1.3,1.3,0,0,0,2.28.155,1.3,1.3,0,0,0,.071-1.257,3.2,3.2,0,0,0-.83-1.073,4.637,4.637,0,0,0-3.074-.945,5.085,5.085,0,0,0-3.2.886,3.122,3.122,0,0,0-1.149,2.592,3.57,3.57,0,0,0,.321,1.559,2.613,2.613,0,0,0,.949,1.079"
+                                      transform="translate(-129.935 -76.522)" fill="red"/>
+                                <path id="Path_98" data-name="Path 98"
+                                      d="M229.606,88.184a5.161,5.161,0,0,0-3.97,1.6,6.984,6.984,0,0,0,0,8.575,5.717,5.717,0,0,0,7.947,0,6.951,6.951,0,0,0,0-8.572,5.178,5.178,0,0,0-3.977-1.606m2.013,8.483a2.417,2.417,0,0,1-2.013.887,2.381,2.381,0,0,1-1.991-.886,4.993,4.993,0,0,1,0-5.186,2.385,2.385,0,0,1,1.991-.883,2.417,2.417,0,0,1,2.013.887,4.945,4.945,0,0,1,0,5.181"
+                                      transform="translate(-194.961 -76.618)" fill="red"/>
+                                <path id="Path_99" data-name="Path 99"
+                                      d="M323.43,94.556a2.672,2.672,0,0,0-1.071-1.061,5.4,5.4,0,0,0-.89-.389c-.333-.114-.879-.268-1.674-.472l-.767-.182c-.741-.172-1.623-.491-1.623-1.032a.878.878,0,0,1,.364-.763,2.012,2.012,0,0,1,1.182-.292,2.256,2.256,0,0,1,1.377.357,1.17,1.17,0,0,1,.371.472,1.295,1.295,0,0,0,2.28.155,1.3,1.3,0,0,0,.072-1.257,3.2,3.2,0,0,0-.83-1.073,4.637,4.637,0,0,0-3.074-.945,5.085,5.085,0,0,0-3.2.886A3.122,3.122,0,0,0,314.8,91.55a3.569,3.569,0,0,0,.321,1.559,2.614,2.614,0,0,0,.949,1.079,7.094,7.094,0,0,0,2.2.766c.105.025.183.043.228.052l.063.014c2.254.519,2.591,1.084,2.591,1.374a.917.917,0,0,1-.38.809,2.277,2.277,0,0,1-1.3.3,2.7,2.7,0,0,1-1.57-.379,1.372,1.372,0,0,1-.456-.564,1.318,1.318,0,0,0-1.187-.788h-.089a1.3,1.3,0,0,0-1.186,1.822,3.428,3.428,0,0,0,.974,1.287,6.052,6.052,0,0,0,6.619.018,3.418,3.418,0,0,0,1.21-2.785,3.232,3.232,0,0,0-.355-1.555"
+                                      transform="translate(-273.785 -76.521)" fill="red"/>
+                                <path id="Path_100" data-name="Path 100"
+                                      d="M36.9,31.669l-6.7-3.68A3.889,3.889,0,0,0,25.2,29.094l-.856,1.824A34.876,34.876,0,0,1,15.88,23.44c-2.528-2.968-4.526-5.347-5.679-9.166l2.623-.781a3.766,3.766,0,0,0,1.546-4.8L11.227,1.8A3.145,3.145,0,0,0,6.833.4C3.613,2.188.76,3.492.111,7.011-.687,15.627,2.9,23.089,8.529,29.7S21.157,41.271,29.922,42c3.811.094,5.85-2.745,8.035-5.923A3.044,3.044,0,0,0,36.9,31.669"
+                                      transform="translate(0 0)" fill="red"/>
+                            </svg>
+
+                        </a>
+                    </div>
+                </div>
+                <div class="burger ">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-bot">
+        <div class="container">
+            <ul class="menu">
+                <li class="menu-item-has-children">
+                    <a href="">תשתיות</a>
+                    <ul>
+                        <li><a href="">על המערכת</a></li>
+                        <li><a href="">מילון מונחים</a></li>
+                        <li><a href="">טבלת המרה</a></li>
+                        <li><a href="">נתוני צריכה</a></li>
+                        <li><a href="">מפת הולכה</a></li>
+                        <li><a href="">מתקנים ופרוייקטים</a></li>
+                        <li><a href="">תעריפי הולכה</a></li>
+                        <li><a href="">תאום תשתיות</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="">הנהלה</a>
+                    <ul>
+                        <li><a href="">חזון החברה</a></li>
+                        <li><a href="">יעדים ואתגרים</a></li>
+                        <li><a href="">הדירקטוריון</a></li>
+                        <li><a href="">הנהלה אגפים ויחידות</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="">סביבה</a>
+                    <ul>
+                        <li><a href="">סביבה ואתיקה</a></li>
+                        <li><a href="">פרוייקטים</a></li>
+                        <li><a href=""> ESG דו''חות</a></li>
+                        <li><a href="">שיקום ופיתוח נופי</a></li>
+                        <li><a href="">מדדי זיהום אוויר</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="">חדשנות</a>
+                    <ul>
+                        <li><a href="">קייס סטאדיז</a></li>
+                        <li><a href="">עולם המימן</a></li>
+                        <li><a href="">סטארטאפים</a></li>
+                        <li><a href="">השקעות וקרנות הון סיכון</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="">מכרזים</a>
+                    <ul>
+                        <li><a href="">טבלת מכרזים</a></li>
+                        <li><a href="">טבלת מכרזים יחיד / חוץ</a></li>
+                        <li><a href="">טבלת פטורים</a></li>
+                        <li><a href="">קבצים להורדה</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="">קריירה</a>
+                    <ul>
+                        <li><a href="">משרות</a></li>
+                        <li><a href=""> נתג''ז HR</a></li>
+                        <li><a href="">אירועים ופעילויות</a></li>
+                        <li><a href="">תפעול ובטיחות</a></li>
+                        <li><a href=""></a></li>
+                    </ul>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="">פיננסי</a>
+                    <ul>
+                        <li><a href="">החזון הכלכלי</a></li>
+                        <li><a href="">דירוגי אשראי</a></li>
+                        <li><a href="">דיווחים פיננסים</a></li>
+                        <li><a href="">דו''חות להורדה</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+
+
+        </div>
+        <div class="header-lang">
+            <ul>
+                <li>
+                                <span>
+                                    <span data-name="עב">עב</span>
+                                </span>
+                </li>
+                <li>
+                    <a href="">
+                        <span data-name="En">En</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+<div class="header-over-bottom">
+    <div class="bg-over">
+        <img src="./img/bottom-wave.png" alt="">
+    </div>
+    <div class="container">
+        <div class="socials">
+            <a href="" class="s-social" target="_blank">
+                <div class="ic">
+                    <img src="./img/inst-ic.svg" alt="">
+                    <img src="./img/inst-ic.svg" alt="">
+                </div>
+            </a>
+            <a href="" class="s-social" target="_blank">
+                <div class="ic">
+                    <img src="./img/fb-ic.svg" alt="">
+                    <img src="./img/fb-ic.svg" alt="">
+                </div>
+            </a>
+            <a href="" class="s-social" target="_blank">
+                <div class="ic">
+                    <img src="./img/lin-ic.svg" alt="">
+                    <img src="./img/lin-ic.svg" alt="">
+                </div>
+            </a>
+            <a href="" class="s-social" target="_blank">
+                <div class="ic">
+                    <img src="./img/yt-ic.svg" alt="">
+                    <img src="./img/yt-ic.svg" alt="">
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<main>
+    <section class="hero hero-dict  btn-trigger">
+        <div class="hero-content">
+            <div class="hero-masked">
+                <div class="hero-img">
+                    <img class="lazyload" data-src="./img/dict-hero.jpg" alt="">
+                </div>
+                <div class="container">
+                    <div class="hero-text">
+                        <div class="default-hero">
+                            <h1>מילון מונחים</h1>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="hero-btn scroll-down">
+            <div class="ic">
+                <img src="./img/arrow-bot.svg" alt="">
+                <img src="./img/arrow-bot.svg" alt="">
+            </div>
+        </div>
+    </section>
+
+
+    <div class="jobs-block dict-block">
+        <div class="container">
+            <div class="jobs-block__cont ">
+                <div class="jobs-right">
+                    <div class="jobs-filtering">
+                        <div class="filter-jobs">
+                            <div class="filter-search">
+                                <form action="">
+                                    <input type="search" placeholder="חיפוש חופשי">
+                                    <button class="src">
+                                        <img src="./img/lupa1.svg" alt="">
+                                        <img src="./img/lupa1.svg" alt="">
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="jobs-left">
+
+                    <div class="jobs-container">
+
+                        <div class="dict-list">
+                            <div class="single-dict plus-over">
+                                <div class="text-plus">
+                                    <div class="text">
+                                        <span>שם של מונח</span>
+
+                                        <p>לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית צש בליא, מנסוטו צמלח
+                                            לביקו ננבי, צמוקו בלוקריה שיצמה ברורק. קולורס מונפרד אדנדום סילקוף,
+                                            מרגשי ומרגשח. עמחליף גולר</p>
+
+                                        <div class="hidden-text">
+                                            <p> מונחף, בגורמי מגמש. תרבנך וסתעד לכנו סתשם השמה - לתכי מורגם בורק?
+                                                לתיג ישבעס.</p>
+
+                                            <p> קולורס מונפרד אדנדום סילקוף, מרגשי ומרגשח. עמחליף לפרומי בלוף קינץ
+                                                תתיח לרעח. לת צשחמי צש בליא, מנסוטו צמלח לביקו ננבי, צמוקו בלוקריה
+                                                שיצמה ברורק. קולהע צופעט למרקוח איבן איף, ברומץ כלרשט מיחוצים. קלאצי
+                                                לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית. סת אלמנקום ניסי
+                                                נון ניבאה. דס איאקוליס וולופטה דיאם. וסטיבולום אט דולור, קראס אגת
+                                                לקטוס וואל אאוגו וסטיבולום סוליסי טידום בעליק. קונדימנטום קורוס
+                                                בליקרה, נונסטי קלובר בריקנה סטום, לפריקך תצטריק לרטי.</p>
+
+                                            <p> סחטיר בלובק. תצטנפל בלינדו למרקל אס לכימפו, דול, צוט ומעיוט - לפתיעם
+                                                ברשג - ולתיעם גדדיש. קוויז דומור ליאמום בלינך רוגצה. לפמעט מוסן מנת.
+                                                להאמית קרהשק סכעיט דז מא, מנכם</p>
+                                        </div>
+
+                                    </div>
+                                    <div class="btn-plus">
+                                        <div class="ic">
+                                            <img src="./img/plus-ic.svg" alt="">
+                                            <img src="./img/plus-ic.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="single-dict plus-over">
+                                <div class="text-plus">
+                                    <div class="text">
+                                        <span>שם של מונח</span>
+
+                                        <p>לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית צש בליא, מנסוטו צמלח
+                                            לביקו ננבי, צמוקו בלוקריה שיצמה ברורק. קולורס מונפרד אדנדום סילקוף,
+                                            מרגשי ומרגשח. עמחליף גולר</p>
+
+                                        <div class="hidden-text">
+                                            <p> מונחף, בגורמי מגמש. תרבנך וסתעד לכנו סתשם השמה - לתכי מורגם בורק?
+                                                לתיג ישבעס.</p>
+
+                                            <p> קולורס מונפרד אדנדום סילקוף, מרגשי ומרגשח. עמחליף לפרומי בלוף קינץ
+                                                תתיח לרעח. לת צשחמי צש בליא, מנסוטו צמלח לביקו ננבי, צמוקו בלוקריה
+                                                שיצמה ברורק. קולהע צופעט למרקוח איבן איף, ברומץ כלרשט מיחוצים. קלאצי
+                                                לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית. סת אלמנקום ניסי
+                                                נון ניבאה. דס איאקוליס וולופטה דיאם. וסטיבולום אט דולור, קראס אגת
+                                                לקטוס וואל אאוגו וסטיבולום סוליסי טידום בעליק. קונדימנטום קורוס
+                                                בליקרה, נונסטי קלובר בריקנה סטום, לפריקך תצטריק לרטי.</p>
+
+                                            <p> סחטיר בלובק. תצטנפל בלינדו למרקל אס לכימפו, דול, צוט ומעיוט - לפתיעם
+                                                ברשג - ולתיעם גדדיש. קוויז דומור ליאמום בלינך רוגצה. לפמעט מוסן מנת.
+                                                להאמית קרהשק סכעיט דז מא, מנכם</p>
+                                        </div>
+
+                                    </div>
+                                    <div class="btn-plus">
+                                        <div class="ic">
+                                            <img src="./img/plus-ic.svg" alt="">
+                                            <img src="./img/plus-ic.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="single-dict plus-over">
+                                <div class="text-plus">
+                                    <div class="text">
+                                        <span>שם של מונח</span>
+
+                                        <p>לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית צש בליא, מנסוטו צמלח
+                                            לביקו ננבי, צמוקו בלוקריה שיצמה ברורק. קולורס מונפרד אדנדום סילקוף,
+                                            מרגשי ומרגשח. עמחליף גולר</p>
+
+                                        <div class="hidden-text">
+                                            <p> מונחף, בגורמי מגמש. תרבנך וסתעד לכנו סתשם השמה - לתכי מורגם בורק?
+                                                לתיג ישבעס.</p>
+
+                                            <p> קולורס מונפרד אדנדום סילקוף, מרגשי ומרגשח. עמחליף לפרומי בלוף קינץ
+                                                תתיח לרעח. לת צשחמי צש בליא, מנסוטו צמלח לביקו ננבי, צמוקו בלוקריה
+                                                שיצמה ברורק. קולהע צופעט למרקוח איבן איף, ברומץ כלרשט מיחוצים. קלאצי
+                                                לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית. סת אלמנקום ניסי
+                                                נון ניבאה. דס איאקוליס וולופטה דיאם. וסטיבולום אט דולור, קראס אגת
+                                                לקטוס וואל אאוגו וסטיבולום סוליסי טידום בעליק. קונדימנטום קורוס
+                                                בליקרה, נונסטי קלובר בריקנה סטום, לפריקך תצטריק לרטי.</p>
+
+                                            <p> סחטיר בלובק. תצטנפל בלינדו למרקל אס לכימפו, דול, צוט ומעיוט - לפתיעם
+                                                ברשג - ולתיעם גדדיש. קוויז דומור ליאמום בלינך רוגצה. לפמעט מוסן מנת.
+                                                להאמית קרהשק סכעיט דז מא, מנכם</p>
+                                        </div>
+
+                                    </div>
+                                    <div class="btn-plus">
+                                        <div class="ic">
+                                            <img src="./img/plus-ic.svg" alt="">
+                                            <img src="./img/plus-ic.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="single-dict plus-over">
+                                <div class="text-plus">
+                                    <div class="text">
+                                        <span>שם של מונח</span>
+
+                                        <p>לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית צש בליא, מנסוטו צמלח
+                                            לביקו ננבי, צמוקו בלוקריה שיצמה ברורק. קולורס מונפרד אדנדום סילקוף,
+                                            מרגשי ומרגשח. עמחליף גולר</p>
+
+                                        <div class="hidden-text">
+                                            <p> מונחף, בגורמי מגמש. תרבנך וסתעד לכנו סתשם השמה - לתכי מורגם בורק?
+                                                לתיג ישבעס.</p>
+
+                                            <p> קולורס מונפרד אדנדום סילקוף, מרגשי ומרגשח. עמחליף לפרומי בלוף קינץ
+                                                תתיח לרעח. לת צשחמי צש בליא, מנסוטו צמלח לביקו ננבי, צמוקו בלוקריה
+                                                שיצמה ברורק. קולהע צופעט למרקוח איבן איף, ברומץ כלרשט מיחוצים. קלאצי
+                                                לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית. סת אלמנקום ניסי
+                                                נון ניבאה. דס איאקוליס וולופטה דיאם. וסטיבולום אט דולור, קראס אגת
+                                                לקטוס וואל אאוגו וסטיבולום סוליסי טידום בעליק. קונדימנטום קורוס
+                                                בליקרה, נונסטי קלובר בריקנה סטום, לפריקך תצטריק לרטי.</p>
+
+                                            <p> סחטיר בלובק. תצטנפל בלינדו למרקל אס לכימפו, דול, צוט ומעיוט - לפתיעם
+                                                ברשג - ולתיעם גדדיש. קוויז דומור ליאמום בלינך רוגצה. לפמעט מוסן מנת.
+                                                להאמית קרהשק סכעיט דז מא, מנכם</p>
+                                        </div>
+
+                                    </div>
+                                    <div class="btn-plus">
+                                        <div class="ic">
+                                            <img src="./img/plus-ic.svg" alt="">
+                                            <img src="./img/plus-ic.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pagin-block">
+
+
+                            <ul class="pagination">
+                                <li class="prev"><a href=""></a></li>
+                                <li class="current"><span data-name="1"></span></li>
+                                <li><a href="" data-name="2"></a></li>
+                                <li><a href="" data-name="3"></a></li>
+                                <li class="next"><a href=""></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-cont">
+            <div class="socials">
+
+                <a href="" class="s-social" target="_blank">
+                    <div class="ic">
+                        <img src="./img/fb-ic.svg" alt="">
+                        <img src="./img/fb-ic.svg" alt="">
+                    </div>
+                </a>
+                <a href="" class="s-social" target="_blank">
+                    <div class="ic">
+                        <img src="./img/inst-ic.svg" alt="">
+                        <img src="./img/inst-ic.svg" alt="">
+                    </div>
+                </a>
+
+                <a href="" class="s-social" target="_blank">
+                    <div class="ic">
+                        <img src="./img/yt-ic.svg" alt="">
+                        <img src="./img/yt-ic.svg" alt="">
+                    </div>
+                </a>
+
+                <a href="" class="s-social" target="_blank">
+                    <div class="ic">
+                        <img src="./img/lin-ic.svg" alt="">
+                        <img src="./img/lin-ic.svg" alt="">
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="footer-menus">
+                <div class="footer-column">
+                    <span>עמודים חשובים</span>
+
+                    <ul class="menu">
+                        <li><a href="">משרות</a></li>
+                        <li><a href="">מכרזים</a></li>
+                        <li><a href="">רישיון החברה</a></li>
+                        <li><a href="">דיווחים פיננסים</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <span>לידיעת הגולשים</span>
+
+                    <ul class="menu">
+                        <li><a href="">מדיניות גולשים באתר</a></li>
+                        <li><a href="">נגישות האתר</a></li>
+                        <li><a href="">מפת האתר</a></li>
+                        <li><a href="">חופש המידע</a></li>
+                        <li><a href="">בלוג</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column footer-form">
+                    <span class="desk-only">ליצירת קשר עם נתג"ז</span>
+                    <span class="mob-only">ליצירת קשר</span>
+
+                    <div class="form">
+                        <form action="">
+                            <div class="input-wrap">
+                                <input type="text" required placeholder="*שם מלא">
+                            </div>
+                            <div class="input-wrap">
+                                <input type="text" required placeholder="*מספר טלפון">
+                            </div>
+                            <div class="input-wrap">
+                                <input type="text" placeholder="אימייל">
+                            </div>
+                            <div class="input-wrap">
+                                <input type="text" placeholder="שם חברה">
+                            </div>
+                            <div class="input-wrap textarea-wrap">
+                                <textarea name="" id="" placeholder="סיבת פניה
+טקסט קצר על סיבת הפניה"></textarea>
+                            </div>
+
+                            <button class="btn">
+                                <p>אשמח שתצרו איתי קשר</p>
+                                <div class="ic">
+                                    <img src="./img/arrow-bot.svg" alt="">
+                                    <img src="./img/arrow-bot.svg" alt="">
+                                </div>
+                            </button>
+
+                        </form>
+                    </div>
+                </div>
+
+                <div class="footer-column footer-infos">
+                    <span>פנו אלינו</span>
+
+                    <ul class="menu">
+                        <li><a href=""><strong> טלפון. </strong> 03-6270400 </a></li>
+                        <li><a href=""><strong> לחירום.</strong> 6778* </a></li>
+                        <li><a href=""><strong> פקס.</strong> 035611320 </a></li>
+                        <li><a href=""><strong> כתובת. </strong> קריית עתידים, מגדל עתידים</a></li>
+                        <li><a href="">ת.ד 58177 תל אביב 6158101</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="footer-bot">
+            <p> כל הזכויות שמורות לאהוי קראייטיב בע"מ</p>
+        </div>
+    </div>
+</footer>
+
+<div class="text-modal modal-window" data-modal="text">
+    <div class="backplate">
+    </div>
+    <div class="modal-container">
+        <div class="cls">
+            <div class="ic">
+                <img src="./img/plus-ic.svg" alt="">
+                <img src="./img/plus-ic.svg" alt="">
+            </div>
+        </div>
+        <div class="modal-text-block">
+            <div class="modal-text-title">
+                <span class="sub-title"></span>
+
+            </div>
+            <div class="modal-text">
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="text-modal modal-window" data-modal="img">
+    <div class="backplate">
+    </div>
+    <div class="modal-container">
+        <div class="cls">
+            <div class="ic">
+                <img src="./img/plus-ic.svg" alt="">
+                <img src="./img/plus-ic.svg" alt="">
+            </div>
+        </div>
+        <div class="modal-text-block">
+            <div class="modal-image">
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="text-modal job-modal modal-window " data-modal="job">
+    <div class="backplate">
+    </div>
+
+    <div class="modal-container">
+        <div class="cls">
+            <div class="ic">
+                <img src="./img/plus-ic.svg" alt="">
+                <img src="./img/plus-ic.svg" alt="">
+            </div>
+        </div>
+        <div class="modal-content-job">
+            <div class="job-content-top">
+                <div class="job-content-right">
+
+                </div>
+
+                <div class="job-content-columns">
+
+                </div>
+
+            </div>
+            <div class="job-content-bot">
+                <span>להגשת מועמדות</span>
+                <div class="job-form">
+                    <div class="form">
+                        <form action="">
+                            <div class="input-wrap">
+                                <input type="text" placeholder="שם מלא">
+                            </div>
+                            <div class="input-wrap">
+                                <input type="text" placeholder="טלפון">
+                            </div>
+                            <div class="input-wrap">
+                                <input type="email" placeholder="כתובת מייל">
+                            </div>
+                            <div class="input-wrap textarea-wrap">
+                                <textarea name="" id="" placeholder="טקסט קצר"></textarea>
+                            </div>
+                            <div class="hidden-input id-input">
+                                <input type="text">
+                            </div>
+
+                            <div class="file-upload">
+                                <label for="file1">
+                                    <input type="file" id="file1" name="file1">
+                                    <span>צירוף קורות חיים</span>
+                                </label>
+                            </div>
+                            <button class="btn">
+                                <p>הגשת מועמדות</p>
+                                <div class="ic">
+                                    <img src="./img/arrow-bot.svg" alt="">
+                                    <img src="./img/arrow-bot.svg" alt="">
+                                </div>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="text-modal job-modal modal-window " data-modal="auction">
+    <div class="backplate">
+    </div>
+
+    <div class="modal-container">
+        <div class="cls">
+            <div class="ic">
+                <img src="./img/plus-ic.svg" alt="">
+                <img src="./img/plus-ic.svg" alt="">
+            </div>
+        </div>
+        <div class="modal-content-job">
+            <div class="job-content-top">
+                <div class="job-content-right">
+
+                </div>
+
+                <div class="job-content-columns">
+
+                </div>
+
+            </div>
+            <div class="auction-modal-bot">
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="text-modal job-modal modal-window " data-modal="auction-form">
+    <div class="backplate">
+    </div>
+
+    <div class="modal-container">
+        <div class="cls">
+            <div class="ic">
+                <img src="./img/plus-ic.svg" alt="">
+                <img src="./img/plus-ic.svg" alt="">
+            </div>
+        </div>
+        <div class="modal-content-job">
+            <div class="auction-form">
+                <span>לקבלת עדכונים במייל</span>
+                <div class="form">
+                    <form action="">
+                        <div class="input-wrap">
+                            <input type="text" placeholder="שם מלא">
+                        </div>
+                        <div class="input-wrap">
+                            <input type="text" placeholder="טלפון">
+                        </div>
+                        <div class="input-wrap">
+                            <input type="text" placeholder="כתובת מייל">
+                        </div>
+                        <div class="filter-select">
+                            <select name="" id="">
+                                <option value="" selected disabled>:אני מתעניין ב</option>
+                                <option value="">טבלת מכרזים</option>
+                                <option value="">טבלת ספק יחיד / חוץ</option>
+                                <option value="">טבלת פטורים</option>
+                            </select>
+                        </div>
+
+                        <button class="btn">
+                            <p>להרשמה לתפוצה</p>
+                            <div class="ic">
+                                <img src="./img/arrow-bot.svg" alt="">
+                                <img src="./img/arrow-bot.svg" alt="">
+                            </div>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="text-modal job-modal modal-window " data-modal="auction-load">
+    <div class="backplate">
+    </div>
+
+    <div class="modal-container">
+        <div class="cls">
+            <div class="ic">
+                <img src="./img/plus-ic.svg" alt="">
+                <img src="./img/plus-ic.svg" alt="">
+            </div>
+        </div>
+        <div class="modal-content-job">
+            <div class="auction-download">
+                <span>נספחים ונהלים</span>
+                <a href="" download class="slide-download">
+                    <div class="img">
+                        <img src="" alt="">
+                    </div>
+                    <div class="bot">
+                        <p>דרישות בטיחות, בריאות וסביבה</p>
+
+                        <div class="btn-download">
+                            <div class="ic">
+                                <img src="./img/download-icon.svg" alt="">
+                                <img src="./img/download-icon.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="" download class="slide-download">
+                    <div class="img">
+                        <img src="" alt="">
+                    </div>
+                    <div class="bot">
+                        <p> דרישות בטיחות, בריאות וסביבה EN </p>
+
+                        <div class="btn-download">
+                            <div class="ic">
+                                <img src="./img/download-icon.svg" alt="">
+                                <img src="./img/download-icon.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="" download class="slide-download">
+                    <div class="img">
+                        <img src="" alt="">
+                    </div>
+                    <div class="bot">
+                        <p>הקוד האתי לקבלנים וספקים</p>
+
+                        <div class="btn-download">
+                            <div class="ic">
+                                <img src="./img/download-icon.svg" alt="">
+                                <img src="./img/download-icon.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+
+<script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+<script src="https://unpkg.com/imask"></script>
+<script  src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script  type="text/javascript"   src="./libs/jquery.raty.js"></script>
+
+<script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>
+<script  src="./js/month-year.js"></script>
+<script  src="./libs/jquery.nice-select.min.js"></script>
+<script class="main-script" src="./js/scripts.min.js"></script>
+</body>
+</html>
