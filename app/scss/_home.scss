@@ -878,6 +878,7 @@ body {
       //-20px
       transform: translate(-1.0417vw, 0) !important;
       z-index: 3 !important;
+      transition: all 0.3s ease-out, z-index 0.4s ease-out !important;
 
       & + .swiper-slide {
         //-10px
@@ -889,7 +890,7 @@ body {
           z-index: 4 !important;
 
           &.swiper-slide-active {
-            z-index: 5 !important;
+            z-index: 10 !important;
 
             .swiper-card {
               box-shadow: -3px 3px 6px rgba(0, 0, 0, 0.16);
@@ -906,7 +907,7 @@ body {
 
       &.swiper-slide-active {
         transform: translate(0, 0) !important;
-        z-index: 6 !important;
+        z-index: 10 !important;
 
         & + .swiper-slide {
           //-10px
@@ -973,12 +974,14 @@ body {
     width: 100%;
     height: auto;
     margin-bottom: vw(50px);
+    max-height: vw(400px);
     padding-#{$right}: vw(50px);
     display: flex;
 
     img {
       width: 100%;
       height: auto;
+      object-fit: cover;
     }
   }
 }
@@ -1805,6 +1808,24 @@ body {
     gap: vw(7px) vw(16px);
   }
 
+  .thanks {
+    display: none;
+    width: 100%;
+    font-size: vw(20px);
+    color: $blue;
+    text-align: center;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: vw(45px) vw(10px);
+
+    strong {
+      font-size: vw(30px);
+      font-weight: bold;
+    }
+  }
+
   .btn {
     width: 100%;
     padding-top: vw(5px);
@@ -1823,6 +1844,16 @@ body {
       font-size: vw(15px);
       padding-#{$left}: vw(5px);
       padding-#{$right}: vw(5px);
+    }
+  }
+
+  &.done {
+    form {
+      display: none;
+    }
+
+    .thanks {
+      display: flex;
     }
   }
 }
@@ -2950,6 +2981,8 @@ h1 {
     mask-image: url("../img/wave-mask.png");
     mask-position: 0 0;
     mask-size: 100% 100%;
+    background-size: 100% auto;
+    background-position: top center;
 
     img {
       width: 100%;
@@ -2975,7 +3008,7 @@ h1 {
 
   .text-director {
     width: 27.8125vw;
-    margin-top: vw(-135px);
+    //margin-top: vw(-135px);
 
     .text {
       p {
@@ -5335,7 +5368,7 @@ div:not(.footer-form) > .form {
       z-index: 3;
       background: #FFFFFF;
 
-      border-radius: 30px;
+      border-radius: vw(30px);
       height: vw(58px);
       cursor: pointer;
 
@@ -5985,6 +6018,98 @@ div:not(.footer-form) > .form {
     ul {
       margin-top: vw(62px);
     }
+  }
+}
+
+
+.file-upload {
+  width: 100%;
+
+  label {
+    position: relative;
+    display: flex;
+    width: 100%;
+
+    input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      appearance: none;
+      outline: none;
+      cursor: pointer;
+      margin: 0;
+      padding: 0;
+      z-index: 3;
+      opacity: 0;
+    }
+
+    > span {
+      width: 100%;
+      height: vw(60px);
+      border-radius: vw(30px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #D5F2FC;
+      border: 2px solid #D5F2FC;
+      padding: vw(3px) vw(70px);
+
+      font-weight: normal;
+      font-size: vw(20px);
+      line-height: 1.2;
+      text-align: center;
+      color: #008fc3;
+      transition: all 0.3s ease-out;
+    }
+
+    .ic {
+      position: absolute;
+      width: vw(70px);
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      left: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: vw(34px);
+        height: auto;
+        transition: all 0.3s ease-out;
+        transform: translate(-50%, -50%);
+
+        &:nth-child(2) {
+          //filter: brightness(0) invert(1);
+          transform: translate(200%, -50%);
+        }
+      }
+    }
+
+    input:hover {
+      & ~ span {
+        background: #fff;
+        //color: #D5F2FC;
+
+      }
+
+      & ~ .ic {
+        img {
+          transform: translate(-300%, -50%);
+
+          &:nth-child(2) {
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+    }
+
   }
 }
 

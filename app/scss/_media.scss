@@ -886,6 +886,16 @@
     gap: vw(14px);
   }
   .form {
+    .thanks {
+      font-size: vw(20px);
+      padding: vw(45px) vw(10px);
+
+      strong {
+        font-size: vw(30px);
+
+      }
+    }
+
     form {
       .btn {
         padding-left: vw(18px);
@@ -3800,10 +3810,31 @@
     margin-top: vw(47px);
   }
 
-  //  done px
+
   .single-dict .text-plus.open .hidden-text {
-    max-height: 600px;
+    max-height: vw(600px);
   }
+
+  .file-upload {
+    label {
+      > span {
+        height: vw(60px);
+        font-size: vw(20px);
+        padding: vw(3px) vw(59px);
+        border-radius: vw(30px);
+      }
+
+      .ic {
+        width: vw(59px);
+
+        img {
+          width: vw(25px);
+        }
+      }
+    }
+  }
+
+  //  done px
 }
 
 

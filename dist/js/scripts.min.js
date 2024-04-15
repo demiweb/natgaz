@@ -1177,7 +1177,9 @@ function controlModal() {
 
                         mod.classList.add('visible');
                         // console.log(data);
-
+                        [...document.querySelectorAll('.form')].forEach((frm) => {
+                            frm.classList.remove('done')
+                        });
                         let modRight = mod.querySelector('.job-content-right');
                         let modLeft = mod.querySelector('.job-content-columns');
                         let hiddenIdInput = mod.querySelector('.id-input input');
@@ -1364,6 +1366,22 @@ changeTab();
 
 
 //tabs
+
+//submit form
+
+let formBtn = [...document.querySelectorAll('.form .btn')];
+
+function controlFormThanks() {
+    if (formBtn.length) {
+        formBtn.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                btn.closest('.form').classList.add('done');
+            })
+        })
+    }
+}
+
+controlFormThanks();
 
 
 
