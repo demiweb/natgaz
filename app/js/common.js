@@ -677,11 +677,17 @@ function startSitesSlider() {
             const swiper2 = new Swiper(sldCont, {
                 // Optional parameters
                 effect: 'cards',
+                perSlideRotate: 0,
                 grabCursor: true,
                 slidesPerView: 1,
                 slidesPerGroup: 1,
                 speed: 800,
-
+                cardsEffect: {
+                    slideShadows: false,
+                    rotate: false,
+                    perSlideRotate: 0,
+                    perSlideOffset: 9,
+                },
 
                 // cssMode: true,
                 navigation: {
