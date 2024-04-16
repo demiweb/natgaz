@@ -6146,6 +6146,10 @@ div:not(.footer-form) > .form {
 body {
   &:not(.rtl) {
     @media screen and (min-width: 768px) {
+      .cards-section.cards-section-tabs .cards-container .cards-right {
+        left: auto;
+        right: 0;
+      }
       .single-news .news-text .ic {
         right: auto;
         left: vw(2px);
