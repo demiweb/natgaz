@@ -674,42 +674,44 @@ function startSitesSlider() {
             let sldNext = sld.querySelector('.slider-btn--next');
             let sldPrev = sld.querySelector('.slider-btn--prev');
             let pagin = sld.querySelector('.dots');
-            const swiper2 = new Swiper(sldCont, {
-                // Optional parameters
-                effect: 'cards',
-                perSlideRotate: 0,
-                grabCursor: true,
-                slidesPerView: 1,
-                slidesPerGroup: 1,
-                speed: 800,
-                cardsEffect: {
-                    slideShadows: false,
-                    rotate: false,
+            setTimeout(() => {
+                const swiper2 = new Swiper(sldCont, {
+                    // Optional parameters
+                    effect: 'cards',
                     perSlideRotate: 0,
-                    perSlideOffset: 9,
-                },
+                    grabCursor: true,
+                    slidesPerView: 1,
+                    slidesPerGroup: 1,
+                    speed: 800,
+                    cardsEffect: {
+                        slideShadows: false,
+                        rotate: false,
+                        perSlideRotate: 0,
+                        perSlideOffset: 9,
+                    },
 
-                // cssMode: true,
-                navigation: {
-                    nextEl: sldNext,
-                    prevEl: sldPrev,
-                },
-                autoplay: false,
-                spaceBetween: 0,
+                    // cssMode: true,
+                    navigation: {
+                        nextEl: sldNext,
+                        prevEl: sldPrev,
+                    },
+                    autoplay: false,
+                    spaceBetween: 0,
 
-                pagination: {
-                    el: pagin,
-                    type: 'bullets',
-                    bulletActiveClass: 'active',
-                    bulletClass: 'single-dot',
-                    bulletElement: 'div',
-                    clickable: true,
-                    currentClass: 'current',
-                    spaceBetween: 2,
-                },
+                    pagination: {
+                        el: pagin,
+                        type: 'bullets',
+                        bulletActiveClass: 'active',
+                        bulletClass: 'single-dot',
+                        bulletElement: 'div',
+                        clickable: true,
+                        currentClass: 'current',
+                        spaceBetween: 2,
+                    },
 
 
-            });
+                });
+            }, 500)
         })
 
 
@@ -1336,6 +1338,8 @@ function changeTab() {
                     btn.classList.add('active');
                     [...btn.closest('.tabs-owner').querySelectorAll('.item-tab')].forEach((tab, m) => {
                         if (m === k) {
+                            tab.classList.add('active');
+                            tab.classList.remove('active');
                             tab.classList.add('active');
                             if (window.innerWidth < 768) {
                                 setTimeout(() => {

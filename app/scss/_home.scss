@@ -6121,6 +6121,28 @@ div:not(.footer-form) > .form {
 
 //done px
 
+.cards-section {
+  &.cards-section-tabs {
+    .cards-container {
+      position: relative;
+      height: vw(647px);
+      .cards-right {
+        display: flex;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        pointer-events: none;
+        //transition: all 0.3s ease-out;
+        &.active {
+          opacity: 1;
+          pointer-events: auto;
+        }
+      }
+    }
+  }
+}
+
 body {
   &:not(.rtl) {
     @media screen and (min-width: 768px) {
