@@ -674,7 +674,7 @@ function startSitesSlider() {
             let sldNext = sld.querySelector('.slider-btn--next');
             let sldPrev = sld.querySelector('.slider-btn--prev');
             let pagin = sld.querySelector('.dots');
-            setTimeout(() => {
+
                 const swiper2 = new Swiper(sldCont, {
                     // Optional parameters
                     effect: 'cards',
@@ -711,7 +711,7 @@ function startSitesSlider() {
 
 
                 });
-            }, 500)
+
         })
 
 
@@ -1339,8 +1339,7 @@ function changeTab() {
                     [...btn.closest('.tabs-owner').querySelectorAll('.item-tab')].forEach((tab, m) => {
                         if (m === k) {
                             tab.classList.add('active');
-                            tab.classList.remove('active');
-                            tab.classList.add('active');
+
                             if (window.innerWidth < 768) {
                                 setTimeout(() => {
                                     // $([document.documentElement, document.body]).animate({
