@@ -239,6 +239,7 @@ body {
       width: vw(205px);
       height: vw(67px);
       max-height: 100%;
+      transform: translateZ(0);
     }
   }
 }
@@ -1059,13 +1060,13 @@ body {
       position: absolute;
       top: 50%;
       right: vw(-5px);
-      transform: translate(0, -50%) rotate(90deg);
+      transform: translate(0, -50%) rotate(90deg) translateZ(0);
       transition: all 0.3s ease-out;
       overflow: hidden;
       backface-visibility: hidden;
 
       &:nth-child(2) {
-        transform: translate(100%, -50%) rotate(90deg);
+        transform: translate(100%, -50%) rotate(90deg) translateZ(0);
         opacity: 0;
       }
     }
@@ -1089,11 +1090,11 @@ body {
 
     .ic {
       img {
-        transform: translate(-150%, -50%) rotate(90deg);
+        transform: translate(-150%, -50%) rotate(90deg) translateZ(0);
 
         &:nth-child(2) {
           opacity: 1;
-          transform: translate(0, -50%) rotate(90deg);
+          transform: translate(0, -50%) rotate(90deg) translateZ(0);
         }
       }
     }
