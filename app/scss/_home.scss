@@ -202,6 +202,8 @@ body {
     a {
       width: 100%;
       height: 100%;
+      overflow: hidden;
+      backface-visibility: hidden;
     }
 
     a, img {
@@ -212,6 +214,10 @@ body {
     }
 
     img {
+
+      appearance: none;
+      overflow: hidden;
+      backface-visibility: hidden;
       width: vw(205px);
       height: vw(67px);
     }
@@ -1028,6 +1034,7 @@ body {
     backface-visibility: hidden;
 
     img {
+      appearance: none;
       width: vw(25px);
       height: auto;
       position: absolute;
@@ -1035,9 +1042,12 @@ body {
       right: vw(-5px);
       transform: translate(0, -50%) rotate(90deg);
       transition: all 0.3s ease-out;
+      overflow: hidden;
+      backface-visibility: hidden;
 
       &:nth-child(2) {
         transform: translate(100%, -50%) rotate(90deg);
+        opacity: 0;
       }
     }
   }
@@ -1063,6 +1073,7 @@ body {
         transform: translate(-150%, -50%) rotate(90deg);
 
         &:nth-child(2) {
+          opacity: 1;
           transform: translate(0, -50%) rotate(90deg);
         }
       }
@@ -6086,6 +6097,7 @@ div:not(.footer-form) > .form {
       transform: translate(0, -50%);
 
       img {
+        appearance: none;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -6093,10 +6105,13 @@ div:not(.footer-form) > .form {
         height: auto;
         transition: all 0.3s ease-out;
         transform: translate(-50%, -50%);
+        backface-visibility: hidden;
+        overflow: hidden;
 
         &:nth-child(2) {
           //filter: brightness(0) invert(1);
           transform: translate(200%, -50%);
+          opacity: 0;
         }
       }
     }
@@ -6114,6 +6129,7 @@ div:not(.footer-form) > .form {
 
           &:nth-child(2) {
             transform: translate(-50%, -50%);
+            opacity: 1;
           }
         }
       }
