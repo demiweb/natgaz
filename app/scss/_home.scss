@@ -197,6 +197,7 @@ body {
     width: vw(54px);
     transition: all 0.3s ease-out;
     position: relative;
+    backface-visibility: hidden;
 
     a {
       width: 100%;
@@ -1024,6 +1025,7 @@ body {
     top: 50%;
     transform: translate(0, -50%);
     overflow: hidden;
+    backface-visibility: hidden;
 
     img {
       width: vw(25px);
@@ -6078,6 +6080,7 @@ div:not(.footer-form) > .form {
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      backface-visibility: hidden;
       left: 0;
       top: 50%;
       transform: translate(0, -50%);
