@@ -3843,6 +3843,18 @@
     }
   }
 
+  .single-news .news-text>span {
+    font-size: vw(14px);
+    top: 0;
+  }
+  .single-news .news-text ul li {
+    span {
+      font-size: vw(16px);
+    }
+    p {
+      font-size: vw(30px);
+    }
+  }
   //  done px
 
   body {
