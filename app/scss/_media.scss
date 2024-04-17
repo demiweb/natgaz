@@ -3209,9 +3209,9 @@
 
   .jobs-block {
     width: 100%;
-    margin-top: vw(40px);
+    margin-top: vw(100px);
     margin-bottom: vw(160px);
-    padding-top: vw(86px);
+    padding-top: vw(26px);
 
     .container {
       padding: 0 vw(11px);
@@ -3536,7 +3536,7 @@
 
   .jobs-block {
     &.auction-block {
-      margin-top: vw(30px);
+      margin-top: vw(90px);
 
       .jobs-block__cont {
         gap: vw(31px);
