@@ -198,13 +198,10 @@ body {
     transition: all 0.3s ease-out;
     position: relative;
     backface-visibility: hidden;
+    line-height: 0;
+    white-space: nowrap;
 
-    a {
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      backface-visibility: hidden;
-    }
+
 
     a, img {
       display: flex;
@@ -213,6 +210,17 @@ body {
       right: 0;
     }
 
+    a {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      backface-visibility: hidden;
+      line-height: 0;
+      white-space: nowrap;
+      max-height: 100%;
+      position: relative;
+
+    }
     img {
 
       appearance: none;
@@ -220,6 +228,7 @@ body {
       backface-visibility: hidden;
       width: vw(205px);
       height: vw(67px);
+      max-height: 100%;
     }
   }
 }
