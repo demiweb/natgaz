@@ -100,8 +100,8 @@ body {
 
     img, video {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
+      //object-fit: cover;
       opacity: 1 !important;
       visibility: visible;
     }
@@ -899,6 +899,11 @@ body {
     .swiper-slide {
       overflow: visible;
       //transform: translateZ(0) !important;
+      z-index: 4 !important;
+      //transition: all 0.3s ease-out, z-index 0.4s ease-out !important;
+      &.swiper-slide-active {
+        z-index: 10 !important;
+      }
 
     //  position: absolute;
     //  top: 0;
@@ -2211,25 +2216,27 @@ h1 {
   }
 
   &:hover {
-    &::before {
-      width: 100%;
-      height: 100%;
-    }
-
-    .ic {
+    @media screen and (min-width: 768px) {
       &::before {
-        transform: translate(-50%, 2000%);
+        width: 100%;
+        height: 100%;
       }
 
-      &::after {
-        transform: translate(-50%, -50%);
-      }
+      .ic {
+        &::before {
+          transform: translate(-50%, 2000%);
+        }
 
-      img {
-        transform: translate(-50%, 100%);
-
-        &:nth-child(2) {
+        &::after {
           transform: translate(-50%, -50%);
+        }
+
+        img {
+          transform: translate(-50%, 100%);
+
+          &:nth-child(2) {
+            transform: translate(-50%, -50%);
+          }
         }
       }
     }
@@ -2245,6 +2252,10 @@ h1 {
   }
 
   .btn-plus {
+    &::before {
+      width: 100%;
+      height: 100%;
+    }
     .ic {
       img {
         opacity: 0;
@@ -3773,6 +3784,7 @@ div:not(.footer-form) > .form {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  margin-top: vw(-55px);
 
   h2, h3 {
 
@@ -3842,9 +3854,12 @@ div:not(.footer-form) > .form {
 }
 
 .article-share {
-  position: absolute;
-  top: vw(-3px);
-  right: vw(-134px);
+  position: sticky;
+  top: vw(50px);
+  //right: vw(-134px);
+  width: vw(70px);
+  margin-right: vw(-133px);
+  margin-top: vw(-15px);
 
   .socials {
     margin: 0;
@@ -3912,7 +3927,27 @@ div:not(.footer-form) > .form {
       }
     }
 
-    &:hover, &.open {
+    &:hover {
+      @media screen and (max-width: 768px) {
+        &::before {
+          width: 100%;
+          height: 100%;
+        }
+
+        .ic {
+
+
+          img {
+            transform: translate(150%, -50%);
+
+            &:nth-child(2) {
+              transform: translate(-50%, -50%);
+            }
+          }
+        }
+      }
+    }
+    &.open {
       &::before {
         width: 100%;
         height: 100%;
@@ -6045,6 +6080,7 @@ div:not(.footer-form) > .form {
     max-width: vw(1366px);
     margin-left: auto;
     margin-right: auto;
+    margin-top: 0;
 
     h2, h3 {
       margin-top: vw(91px);
@@ -6181,6 +6217,7 @@ div:not(.footer-form) > .form {
     }
   }
 }
+
 
 body {
   &:not(.rtl) {
@@ -6480,5 +6517,7 @@ body {
     }
   }
 }
+
+
 
 

@@ -60,7 +60,8 @@
     gap: vw(60px);
   }
   .some-info {
-    padding-top: vw(134px);
+    padding-top: vw(64px);
+    margin-top: vw(70px);
   }
   .single-some-info {
     width: 100%;
@@ -1475,7 +1476,8 @@
         align-items: center;
         justify-content: center;
         width: 100%;
-        margin-top: vw(61px);
+        //margin-top: vw(61px);
+        margin-top: vw(22px);
       }
     }
 
@@ -1848,22 +1850,22 @@
             color: #042844;
           }
 
-          &:hover {
-            .ic {
-              &::before {
-                width: 100%;
-                height: 100%;
-              }
-
-              img {
-                transform: translate(-200%, -50%) rotate(90deg);
-
-                &:nth-child(2) {
-                  transform: translate(-50%, -50%) rotate(90deg);
-                }
-              }
-            }
-          }
+          //&:hover {
+          //  .ic {
+          //    &::before {
+          //      width: 100%;
+          //      height: 100%;
+          //    }
+          //
+          //    img {
+          //      transform: translate(-200%, -50%) rotate(90deg);
+          //
+          //      &:nth-child(2) {
+          //        transform: translate(-50%, -50%) rotate(90deg);
+          //      }
+          //    }
+          //  }
+          //}
         }
 
         .text-expand {
@@ -2146,6 +2148,7 @@
   }
 
   .article-text {
+    margin-top: 0;
     h2, h3 {
       font-size: vw(25px);
       padding-right: vw(13px);
@@ -2807,10 +2810,12 @@
       display: none;
     }
   }
-
-  .display-year-month {
+.table-speed-control {
+  margin-bottom: vw(50px);
+}
+.display-year-month {
     width: 100%;
-    margin-top: vw(50px);
+    //margin-top: vw(50px);
     margin-bottom: vw(50px);
     display: flex;
     align-items: center;
@@ -2988,20 +2993,20 @@
     }
 
     &:hover {
-      .ic {
-        &::before {
-          width: 100%;
-          height: 100%;
-        }
-
-        img {
-          transform: translate(-200%, -50%) rotate(90deg);
-
-          &:nth-child(2) {
-            transform: translate(-50%, -50%) rotate(90deg);
-          }
-        }
-      }
+      //.ic {
+      //  &::before {
+      //    width: 100%;
+      //    height: 100%;
+      //  }
+      //
+      //  img {
+      //    transform: translate(-200%, -50%) rotate(90deg);
+      //
+      //    &:nth-child(2) {
+      //      transform: translate(-50%, -50%) rotate(90deg);
+      //    }
+      //  }
+      //}
     }
 
     p {
@@ -3721,6 +3726,14 @@
 
     .filter-jobs {
       padding: vw(28px) vw(11px) vw(36px);
+    }
+  }
+
+  .hero-masked .hero-img {
+    img, video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
   .hero.hero-dict {
