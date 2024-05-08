@@ -1691,7 +1691,10 @@
     .text-director .text {
       display: flex;
       max-width: 100%;
-
+      font-weight: normal;
+      font-size: vw(16px);
+      line-height: 1.375;
+      color: #042844;
       .hidden-text {
         max-width: 100%;
         width: 100%;
@@ -2149,6 +2152,7 @@
 
   .article-text {
     margin-top: 0;
+
     h2, h3 {
       font-size: vw(25px);
       padding-right: vw(13px);
@@ -2540,7 +2544,7 @@
     }
   }
   .graph-table:hover .graph-line::before {
-    height: 100%;
+    //height: 100%;
   }
   .graph-bot {
     height: 100%;
@@ -2810,10 +2814,10 @@
       display: none;
     }
   }
-.table-speed-control {
-  margin-bottom: vw(50px);
-}
-.display-year-month {
+  .table-speed-control {
+    margin-bottom: vw(50px);
+  }
+  .display-year-month {
     width: 100%;
     //margin-top: vw(50px);
     margin-bottom: vw(50px);
@@ -3108,6 +3112,8 @@
 
   .glossar.glossar-work .glossar-block {
     padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
     gap: vw(25px);
   }
   .glossar.glossar-work .glossar-block .img img {
@@ -3117,8 +3123,10 @@
     padding-top: vw(241px);
     padding-bottom: vw(61px);
     z-index: 1;
-    margin-top: vw(-89px);
-    margin-bottom: vw(48px);
+    margin-top: 0;
+    //margin-bottom: vw(48px);
+    margin-bottom: vw(-41px);
+    transform: translate(0, vw(-89px));
   }
   .glossar.glossar-work .glossar-block .text .sub-title {
     margin-bottom: vw(30px);
@@ -3214,9 +3222,9 @@
 
   .jobs-block {
     width: 100%;
-    margin-top: vw(100px);
+    margin-top: vw(40px);
     margin-bottom: vw(160px);
-    padding-top: vw(26px);
+    padding-top: vw(86px);
 
     .container {
       padding: 0 vw(11px);
@@ -3241,9 +3249,11 @@
     border-radius: vw(25px);
   }
   .filter-search {
-    padding: 0 vw(4px);
+    padding: 0;
+    width: calc(100% - 2.2222vw);
+    margin: 0 vw(4px);
   }
-  .filter-search form {
+  .filter-search {
     input {
       height: vw(60px);
       font-size: 20px;
@@ -3794,13 +3804,13 @@
           }
         }
 
-        &.prev, &.next {
-          a, span {
-            &::before, &::after {
-              width: vw(25px);
-              height: vw(14px);
-            }
+        .prev, .next {
+
+          &::before, &::after {
+            width: vw(25px);
+            height: vw(14px);
           }
+
         }
       }
     }
@@ -3856,14 +3866,15 @@
     }
   }
 
-  .single-news .news-text>span {
+  .single-news .news-text > span {
     font-size: vw(14px);
     top: 0;
   }
   .single-news .news-text ul li {
-    span {
+    strong {
       font-size: vw(16px);
     }
+
     p {
       font-size: vw(30px);
     }
@@ -3943,12 +3954,12 @@
         transform: translate(0, -50%) rotate(180deg) rotateX(180deg);
       }
 
-      .filter-search form input {
+      .filter-search input {
         padding-left: vw(2px);
         padding-right: vw(11px);
       }
 
-      .filter-search form .src {
+      .filter-search .src {
         left: auto;
         right: 1px;
       }
@@ -4013,33 +4024,41 @@
         left: auto;
         right: vw(9px);
       }
+
       .single-dict .text-plus .btn-plus {
         left: auto;
         right: vw(10px);
       }
+
       .single-dict {
         padding-left: vw(18px);
         padding-right: vw(34px);
       }
+
       .filter-select .nice-select > span {
         padding-right: vw(6px);
         padding-left: vw(3px);
       }
+
       .auction-download .slide-download .bot {
         padding-left: vw(28px);
         padding-right: vw(90px);
       }
+
       .auction-download .slide-download .bot p {
         text-align: left;
       }
+
       .single-job .tag {
         left: auto;
         right: vw(19px);
       }
+
       .column-text.single-column .tag {
         left: auto;
         right: vw(6px);
       }
+
       .filter-select .nice-select > span::after {
         left: auto;
         right: vw(17px);
@@ -4054,6 +4073,21 @@
         padding-left: vw(22px);
         padding-right: vw(33px);
       }
+    }
+  }
+  .page-404 {
+    margin-top: vw(40px);
+    flex-grow: 1;
+  }
+  .page-404-wrap {
+    padding-bottom: vw(150px);
+    flex-grow: 1;
+    h1 {
+      font-size: vw(160px);
+    }
+    .btn {
+      width: 100%;
+      margin-top: vw(20px);
     }
   }
 }

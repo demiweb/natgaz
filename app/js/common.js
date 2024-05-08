@@ -322,8 +322,8 @@ function controlDataTable() {
                     infoList.innerHTML = '';
                     console.log();
                     if (activeMassive[tableSelected] === 'empty') {
-                        infoEmpty.classList.add('show');
-                        infoInfo.classList.add('hide');
+                        // infoEmpty.classList.add('show');
+                        // infoInfo.classList.add('hide');
                     } else {
                         infoEmpty.classList.remove('show');
                         infoInfo.classList.remove('hide');
@@ -652,9 +652,56 @@ $(".scroll-down").click(function (e) {
     e.preventDefault();
     e.stopPropagation();
     let item = this.closest('.btn-trigger').nextElementSibling;
-    $([document.documentElement, document.body]).animate({
-        scrollTop: $(item).offset().top
-    }, 600);
+    if (this.dataset.down) {
+
+        if (window.innerWidth < 768) {
+            console.log('lower');
+            if (item.classList.contains('waves-slider-wrap')) {
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: $(item).offset().top + 600
+                }, 600);
+            }
+            else {
+                if (item.classList.contains('under-wave')) {
+                    $([document.documentElement, document.body]).animate({
+                        scrollTop: $(item).offset().top + 130
+                    }, 600);
+                } else {
+                    $([document.documentElement, document.body]).animate({
+                        scrollTop: $(item).offset().top + Number(this.dataset.down)
+                    }, 600);
+                }
+            }
+
+
+
+        } else {
+            if (item.classList.contains('waves-slider-wrap')) {
+                // console.log('da');
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: $(item).offset().top + Number(this.dataset.down)
+                }, 600);
+            } else {
+                if (item.classList.contains('under-wave')) {
+                    // console.log('da');
+                    $([document.documentElement, document.body]).animate({
+                        scrollTop: $(item).offset().top + Number(this.dataset.down)
+                    }, 600);
+                } else {
+                    $([document.documentElement, document.body]).animate({
+                        scrollTop: $(item).offset().top - this.dataset.down
+                    }, 600);
+                }
+            }
+
+
+        }
+    } else {
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $(item).offset().top
+        }, 600);
+    }
+
 });
 
 
@@ -662,7 +709,7 @@ $(".scroll-down").click(function (e) {
 
 //swipers
 
-let cardsSection = [...document.querySelectorAll('.cards-section')];
+let cardsSection = [...document.querySelectorAll('.cards-slider')];
 
 function startSitesSlider() {
     if (!cardsSection.length) {
@@ -675,81 +722,81 @@ function startSitesSlider() {
             let sldPrev = sld.querySelector('.slider-btn--prev');
             let pagin = sld.querySelector('.dots');
 
-                if (sld.classList.contains('cards-long')) {
-                    const swiper2 = new Swiper(sldCont, {
-                        // Optional parameters
-                        effect: 'cards',
+            if (sld.closest('.cards-long')) {
+                const swiper2 = new Swiper(sldCont, {
+                    // Optional parameters
+                    effect: 'cards',
+                    perSlideRotate: 0,
+                    grabCursor: true,
+                    slidesPerView: 1,
+                    slidesPerGroup: 1,
+                    speed: 800,
+                    cardsEffect: {
+                        slideShadows: false,
+                        rotate: false,
                         perSlideRotate: 0,
-                        grabCursor: true,
-                        slidesPerView: 1,
-                        slidesPerGroup: 1,
-                        speed: 800,
-                        cardsEffect: {
-                            slideShadows: false,
-                            rotate: false,
-                            perSlideRotate: 0,
-                            perSlideOffset: 8,
-                        },
+                        perSlideOffset: 8,
+                    },
 
-                        // cssMode: true,
-                        navigation: {
-                            nextEl: sldNext,
-                            prevEl: sldPrev,
-                        },
-                        autoplay: false,
-                        spaceBetween: 0,
+                    // cssMode: true,
+                    navigation: {
+                        nextEl: sldNext,
+                        prevEl: sldPrev,
+                    },
+                    autoplay: false,
+                    spaceBetween: 0,
 
-                        pagination: {
-                            el: pagin,
-                            type: 'bullets',
-                            bulletActiveClass: 'active',
-                            bulletClass: 'single-dot',
-                            bulletElement: 'div',
-                            clickable: true,
-                            currentClass: 'current',
-                            spaceBetween: 2,
-                        },
+                    pagination: {
+                        el: pagin,
+                        type: 'bullets',
+                        bulletActiveClass: 'active',
+                        bulletClass: 'single-dot',
+                        bulletElement: 'div',
+                        clickable: true,
+                        currentClass: 'current',
+                        spaceBetween: 2,
+                    },
 
 
-                    });
-                } else {
-                    const swiper2 = new Swiper(sldCont, {
-                        // Optional parameters
-                        effect: 'cards',
+                });
+            } else {
+                const swiper2 = new Swiper(sldCont, {
+                    // Optional parameters
+                    effect: 'cards',
+                    perSlideRotate: 0,
+                    grabCursor: true,
+                    slidesPerView: 1,
+                    slidesPerGroup: 1,
+                    speed: 800,
+                    cardsEffect: {
+                        slideShadows: false,
+                        rotate: false,
                         perSlideRotate: 0,
-                        grabCursor: true,
-                        slidesPerView: 1,
-                        slidesPerGroup: 1,
-                        speed: 800,
-                        cardsEffect: {
-                            slideShadows: false,
-                            rotate: false,
-                            perSlideRotate: 0,
-                            perSlideOffset: 9,
-                        },
+                        perSlideOffset: 9,
+                    },
 
-                        // cssMode: true,
-                        navigation: {
-                            nextEl: sldNext,
-                            prevEl: sldPrev,
-                        },
-                        autoplay: false,
-                        spaceBetween: 0,
+                    // cssMode: true,
+                    navigation: {
+                        nextEl: sldNext,
+                        prevEl: sldPrev,
+                    },
+                    autoplay: false,
+                    spaceBetween: 0,
 
-                        pagination: {
-                            el: pagin,
-                            type: 'bullets',
-                            bulletActiveClass: 'active',
-                            bulletClass: 'single-dot',
-                            bulletElement: 'div',
-                            clickable: true,
-                            currentClass: 'current',
-                            spaceBetween: 2,
-                        },
+                    pagination: {
+                        el: pagin,
+                        type: 'bullets',
+                        bulletActiveClass: 'active',
+                        bulletClass: 'single-dot',
+                        bulletElement: 'div',
+                        clickable: true,
+                        currentClass: 'current',
+                        spaceBetween: 2,
+                    },
 
 
-                    });
-                }
+                });
+            }
 
         })
 
@@ -853,7 +900,6 @@ function startDownloadSlider() {
                 grid: {
                     rows: 2,
                 },
-
 
 
                 // cssMode: true,
@@ -1193,50 +1239,62 @@ function controlModal() {
                 })
             })
         });
-        modJobs.forEach((btn) => {
-            let data = btn.dataset.mod;
-
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                let rightText = btn.closest('.job-mod-owner').querySelector('.text');
-                let leftText = btn.closest('.job-mod-owner').querySelector('.hidden-wrap');
-                let hiddenId = btn.closest('.job-mod-owner').dataset.id;
 
 
-                if (document.querySelector('.modal-window.visible')) {
-                    document.querySelector('.modal-window.visible').classList.remove('visible');
-                }
-                modals.forEach((mod) => {
-                    if (mod.dataset.modal === data) {
-                        document.body.classList.add('no-scroll');
+        $('body').on('click', '.mod-jobs', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
 
-                        mod.classList.add('visible');
-                        // console.log(data);
-                        [...document.querySelectorAll('.form')].forEach((frm) => {
-                            frm.classList.remove('done')
-                        });
-                        let modRight = mod.querySelector('.job-content-right');
-                        let modLeft = mod.querySelector('.job-content-columns');
-                        let hiddenIdInput = mod.querySelector('.id-input input');
+            let data = this.dataset.mod;
 
-                        if (data === 'auction') {
-
-                            let modLoad = btn.closest('.job-mod-owner').querySelector('.hidden-load');
-                            let modLoadInner = mod.querySelector('.auction-modal-bot');
-                            modLoadInner.innerHTML = modLoad.innerHTML;
-                        }
-
-                        modRight.innerHTML = rightText.innerHTML;
-                        modLeft.innerHTML = leftText.innerHTML;
-                        hiddenIdInput.value = Number(hiddenId);
+            let rightText = this.closest('.job-mod-owner').querySelector('.text');
+            let leftText = this.closest('.job-mod-owner').querySelector('.hidden-wrap');
+            let hiddenId = this.closest('.job-mod-owner').dataset.id;
 
 
+            if (document.querySelector('.modal-window.visible')) {
+                document.querySelector('.modal-window.visible').classList.remove('visible');
+            }
+            modals.forEach((mod) => {
+                if (mod.dataset.modal === data) {
+                    document.body.classList.add('no-scroll');
+
+                    mod.classList.add('visible');
+                    // console.log(data);
+                    [...document.querySelectorAll('.form')].forEach((frm) => {
+                        frm.classList.remove('done')
+                    });
+                    let modRight = mod.querySelector('.job-content-right');
+                    let modLeft = mod.querySelector('.job-content-columns');
+                    let hiddenIdInput = mod.querySelector('.id-input input');
+
+                    if (data === 'auction') {
+
+                        let modLoad = this.closest('.job-mod-owner').querySelector('.hidden-load');
+                        let modLoadInner = mod.querySelector('.auction-modal-bot');
+                        modLoadInner.innerHTML = modLoad.innerHTML;
                     }
-                })
+
+                    modRight.innerHTML = rightText.innerHTML;
+                    modLeft.innerHTML = leftText.innerHTML;
+                    hiddenIdInput.value = Number(hiddenId);
+
+
+                }
             })
+
+
         });
 
+        // modJobs.forEach((btn) => {
+        //
+        //
+        //     btn.addEventListener('click', (e) => {
+        //         e.preventDefault();
+        //         e.stopPropagation();
+        //
+        //     })
+        // });
 
         backplates.forEach((btn) => {
             btn.addEventListener('click', () => {
@@ -1402,23 +1460,37 @@ function changeTab() {
 changeTab();
 
 
+function detectUrlTab() {
+    if (document.querySelector('.auction-block')) {
+        window.location.href.includes('foobar');
+        let tabis = [...document.querySelectorAll('.auction-block .jobs-tabs .tab-btn')];
+
+        if (window.location.href.includes('tabs=0')) {
+            tabis[0].click();
+        }
+        if (window.location.href.includes('tabs=1')) {
+            tabis[1].click();
+        }
+        if (window.location.href.includes('tabs=2')) {
+            tabis[2].click();
+        }
+    }
+}
+
+detectUrlTab();
 //tabs
 
-//submit form
+let graphTable = [...document.querySelectorAll('.graph-table')];
 
-let formBtn = [...document.querySelectorAll('.form .btn')];
-
-function controlFormThanks() {
-    if (formBtn.length) {
-        formBtn.forEach((btn) => {
-            btn.addEventListener('click', () => {
-                btn.closest('.form').classList.add('done');
+function animGraphTable() {
+    if (graphTable.length) {
+        graphTable.forEach((btn) => {
+            btn.addEventListener('mouseover', () => {
+                btn.classList.add('animed');
             })
         })
     }
 }
 
-controlFormThanks();
-
-
+animGraphTable();
 
