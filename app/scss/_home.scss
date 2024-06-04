@@ -150,7 +150,8 @@ body {
 }
 
 .header-top {
-  width: vw(536px);
+  //width: vw(536px);
+  width: vw(360px);
 
   border-radius: 0 0 vw(35px) vw(35px);
   background: #fff;
@@ -1254,6 +1255,17 @@ body {
     max-width: 87%;
   }
 
+  .text {
+    p {
+      font-weight: normal;
+      font-size: vw(20px);
+      line-height: 1.5;
+      //text-align: right;
+      color: #042844;
+      max-width: 87%;
+    }
+  }
+
   .btn {
     min-width: vw(398px);
     margin-top: vw(95px);
@@ -1746,7 +1758,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 0;
     flex-grow: 1;
 
@@ -1990,6 +2002,18 @@ h1 {
   position: relative;
   z-index: 2;
   padding-bottom: vw(70px);
+
+  font-weight: normal;
+  font-size: vw(20px);
+  line-height: 1.5;
+  color: #042844;
+  .container {
+    > p {
+      max-width: vw(534px);
+      margin-top: vw(29px);
+      margin-bottom: vw(29px);
+    }
+  }
 }
 
 .about-company-list {
@@ -2061,7 +2085,7 @@ h1 {
 
   span {
     &::before {
-      content: counter(my-awesome-counter2);
+      //content: counter(my-awesome-counter2);
     }
   }
 }
@@ -2261,7 +2285,7 @@ h1 {
   }
 
   .hidden-text {
-    max-height: vw(400px);
+    max-height: vw(600px);
   }
 
   .btn-plus {
@@ -2428,7 +2452,8 @@ h1 {
 
 .waves-slider {
   width: 100%;
-  height: vw(975px);
+  height: auto;
+  //height: vw(975px);
   padding: vw(20px) 0;
 
   .swiper {
@@ -2449,8 +2474,49 @@ h1 {
   .swiper-slide {
     width: 100%;
     height: 100%;
+
+  }
+
+  @media screen and (min-width: 768px) {
+    .swiper {
+      height: auto;
+
+      .swiper-wrapper {
+        height: auto;
+
+        .swiper-slide {
+          height: auto;
+        }
+
+        .wave-slide {
+          min-height: vw(935px);
+        }
+      }
+    }
   }
 }
+
+.hero.hero-esg + .waves-slider-wrap .waves-slider {
+  height: auto;
+  @media screen and (min-width: 768px) {
+    .swiper {
+      height: auto;
+
+      .swiper-wrapper {
+        height: auto;
+
+        .swiper-slide {
+          height: auto;
+        }
+
+        .wave-slide {
+          min-height: vw(1262px);
+        }
+      }
+    }
+  }
+}
+
 
 .wave-slide {
   width: 100%;
@@ -2471,12 +2537,15 @@ h1 {
     position: absolute;
     top: 0;
     left: 0;
-    display: flex;
+    //display: flex;
 
     img {
+      position: absolute;
+      left: 0;
+      top: 0;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
+      display: flex;
     }
   }
 
@@ -2502,7 +2571,7 @@ h1 {
     color: #042844;
   }
 
-  p {
+  p, .hidden-text {
     font-weight: normal;
     font-size: vw(20px);
     line-height: 1.5;
@@ -2515,7 +2584,75 @@ h1 {
     }
   }
 
+  .hidden-text {
+    margin-bottom: 0;
+  }
 
+  .text {
+    width: 100%;
+    position: relative;
+
+    .btn-plus {
+      position: absolute;
+      right: 100%;
+      bottom: 0;
+    }
+  }
+
+
+}
+
+.textual-plus {
+  padding-bottom: vw(260px);
+  transition: all 0.4s ease-out;
+  position: relative;
+
+  .text {
+    position: relative;
+  }
+
+  @media screen and (min-width: 768px) {
+    .btn-plus {
+      position: absolute;
+      right: 100%;
+      bottom: 0;
+    }
+  }
+
+  .hidden-text {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease-out;
+  }
+
+  &.open {
+    padding-bottom: vw(335px);
+
+    .hidden-text {
+      max-height: vw(600px);
+    }
+  }
+}
+
+.cards-section.cards-other .cards-text.textual-plus {
+  padding-bottom: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .under-wave-mask .container .wave-text.textual-plus {
+    padding-bottom: vw(270px);
+  }
+
+  .under-wave-mask .container .wave-text.textual-plus.open {
+    //padding-bottom: vw(385px);
+    padding-bottom: vw(270px);
+  }
+}
+
+.speed-table-text {
+  .textual-plus {
+    padding: 0;
+  }
 }
 
 .pagin-wave-wrap {
@@ -2906,14 +3043,14 @@ h1 {
 
 .under-wave {
   width: 100%;
-  height: vw(1262px);
+  //height: vw(1262px);
   margin-top: vw(-362px);
   margin-bottom: vw(122px);
 }
 
 .under-wave-mask {
   width: 100%;
-  height: 100%;
+  min-height: vw(1262px);
   mask-image: url("../img/mask-wave2.png");
   mask-size: 100% 100%;
   mask-position: 0 0;
@@ -2931,10 +3068,15 @@ h1 {
     position: absolute;
     z-index: 2;
 
+    display: flex;
+
     img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+
     }
   }
 
@@ -3731,6 +3873,7 @@ div:not(.footer-form) > .form {
     display: inline-block;
     margin-bottom: vw(25px);
     text-align: right;
+    max-width: 60%;
   }
 
   span {
@@ -3862,7 +4005,9 @@ div:not(.footer-form) > .form {
   }
 
   img {
-    width: 100%;
+    //width: 100%;
+    width: auto;
+    max-width: 100%;
     height: auto;
     margin: vw(50px) 0 vw(79px);
   }
@@ -4019,7 +4164,7 @@ div:not(.footer-form) > .form {
     }
 
     .waves-slider {
-      height: vw(1262px);
+      //height: vw(1262px);
       padding: 0;
       filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.16));
 
@@ -4042,7 +4187,7 @@ div:not(.footer-form) > .form {
         margin-bottom: vw(33px);
       }
 
-      p, .sub-title {
+      p, .sub-title, .hidden-text {
         color: #fff;
       }
     }
@@ -4068,7 +4213,8 @@ div:not(.footer-form) > .form {
   align-items: center;
   justify-content: center;
   gap: vw(42px);
-  padding-left: vw(36px);
+  //padding-left: vw(36px);
+  padding-left: 0;
 
   .img {
     width: vw(139px);
@@ -6320,6 +6466,7 @@ div:not(.footer-form) > .form {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   h1 {
     text-shadow: none;
     box-shadow: none;
@@ -6328,6 +6475,7 @@ div:not(.footer-form) > .form {
     font-size: vw(500px);
     line-height: 1;
   }
+
   .btn {
     width: vw(400px);
     margin-top: vw(4px);
@@ -6633,6 +6781,11 @@ body {
   }
 }
 
+@media screen and (min-width: 768px) {
+  .subscribe-section .text-director .btn-plus {
+    bottom: vw(100px);
+  }
+}
 
 
 

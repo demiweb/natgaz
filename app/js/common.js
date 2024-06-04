@@ -608,6 +608,7 @@ controlShareText();
 
 let selectOwner = [...document.querySelectorAll('.select-owner')];
 
+
 function controlSelect() {
     if (selectOwner.length) {
         selectOwner.forEach((sel) => {
@@ -819,6 +820,7 @@ function startDirectSlider() {
             let sldNext = sld.querySelector('.slider-btn--next');
             let sldPrev = sld.querySelector('.slider-btn--prev');
             let pagin = sld.querySelector('.dots');
+            let currentIndex = 0;
             const swiper2 = new Swiper(sldCont, {
                 // Optional parameters
                 loop: true,
@@ -840,7 +842,7 @@ function startDirectSlider() {
                 resistanceRatio: 0.3,
                 initialSlide: 2,
 
-
+                // centeredSlides: true,
                 // cssMode: true,
                 navigation: {
                     nextEl: sldNext,
@@ -848,7 +850,8 @@ function startDirectSlider() {
                 },
                 autoplay: false,
                 spaceBetween: 20,
-
+                loopFillGroupWithBlank: false,
+                loopAdditionalSlides: 2,
                 pagination: {
                     el: pagin,
                     type: 'bullets',
@@ -869,6 +872,21 @@ function startDirectSlider() {
 
 
             });
+
+            // sldPrev.addEventListener("click", () => {
+            //     if (currentIndex === 0) {
+            //         currentIndex = swiper2.slides.length - 1;
+            //     } else {
+            //         currentIndex--;
+            //     }
+            //     swiper2.slideToLoop(currentIndex);
+            //     // console.log(currentIndex);
+            // });
+            //
+            // sldNext.addEventListener("click", () => {
+            //     currentIndex = swiper2.realIndex;
+            //     // console.log(currentIndex);
+            // });
         })
 
 
@@ -964,6 +982,7 @@ function startWaveSlider() {
                 slidesPerGroup: 1,
                 speed: 300,
 
+
                 crossFade: true,
                 followFinger: true,
                 allowTouchMove: true,
@@ -995,6 +1014,7 @@ function startWaveSlider() {
                         return '<span class="' + className + '">' + paginTexts[index].innerHTML + "</span>";
                     },
                     clickable: true,
+
                 },
 
                 breakpoints: {
@@ -1005,6 +1025,9 @@ function startWaveSlider() {
                 }
 
 
+            });
+            swiper2.on('slideChange', function () {
+                $('.textual-plus').removeClass('open');
             });
         })
 

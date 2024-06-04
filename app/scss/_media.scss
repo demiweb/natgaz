@@ -16,6 +16,7 @@
   .hero-content {
     filter: none;
     z-index: 2;
+    position: relative;
   }
 
   .hero-masked {
@@ -83,6 +84,15 @@
     &.active {
       .header-top {
         filter: none;
+      }
+      .header-sos {
+        a {
+          svg {
+            path {
+              fill: red !important;
+            }
+          }
+        }
       }
     }
   }
@@ -162,7 +172,8 @@
     top: vw(62px);
 
     background: #fff;
-    height: vw(489px);
+    //height: vw(489px);
+    height: vw(539px);
     width: 100%;
     //mask-image: url("../img/header-bot-mask.png");
     //mask-position: 0 0;
@@ -180,8 +191,8 @@
     }
 
     &::before {
-      width: 360px;
-      height: 66px;
+      width: vw(360px);
+      height: vw(66px);
       display: inline-block;
       content: '';
       background: url("../img/header-bot-before.svg") no-repeat center / 100%;
@@ -238,7 +249,7 @@
   }
   .header {
     &::before {
-      height: vw(621px);
+      height: vw(671px);
       width: 100%;
       border-radius: 0 0 vw(35px) vw(35px);
       display: inline-block;
@@ -354,7 +365,7 @@
 
         ul {
 
-          max-height: vw(305px);
+          max-height: vw(425px);
         }
       }
     }
@@ -795,6 +806,18 @@
     }
   }
   .footer-column {
+    &:nth-child(1) {
+      order: 1;
+    }
+    &:nth-child(2) {
+      order: 2;
+    }
+    &:nth-child(3) {
+      order: 4;
+    }
+    &:nth-child(4) {
+      order: 3;
+    }
     .menu {
       margin-top: 0;
       margin-bottom: 0;
@@ -932,14 +955,26 @@
     margin-top: vw(91px);
     padding-top: vw(40px);
 
+    font-weight: normal;
+    font-size: vw(16px);
+    line-height: 1.375;
+    color: #042844;
+
+
+
     .container {
+      > p {
+        max-width: 100%;
+        margin-top: vw(20px);
+        margin-bottom: vw(20px);
+      }
       > .sub-title {
         width: 100%;
         text-align: center;
       }
     }
   }
-
+  .header-bot__cont
   .about-company-list {
     width: 100%;
     margin-top: vw(61px);
@@ -1254,7 +1289,7 @@
         opacity: 1;
 
         border-color: $blue;
-        max-height: vw(250px);
+        max-height: vw(550px);
       }
     }
   }
@@ -1446,6 +1481,11 @@
     mask-image: url("../img/mask-static2.png");
     mask-size: 100% 100%;
     mask-position: 0 0;
+    height: 100%;
+  }
+  .under-wave-mask .img img {
+    height: 100%;
+    object-fit: cover;
   }
   .waves-static {
     min-height: auto;
@@ -1905,10 +1945,16 @@
       margin-right: vw(-5px);
       margin-bottom: vw(28px);
     }
+    .text-director .hidden-text {
+      max-width: 100%;
+      max-height: none;
+    }
   }
   .subscribe-left .text {
     p {
-      display: none;
+      //display: none;
+      font-size: vw(16px);
+      line-height: 1.375;
     }
 
     span {
@@ -2076,6 +2122,7 @@
     h1 {
       font-size: vw(30px);
       margin-bottom: vw(19px);
+      max-width: 100%;
 
       br {
         display: none;
@@ -2466,6 +2513,11 @@
       }
     }
   }
+  .subscribe-left .text {
+    max-width: 100%;
+    display: flex;
+  }
+
   .dir-table .img {
     height: auto;
   }
@@ -2681,7 +2733,7 @@
       overflow: hidden;
     }
 
-    &.text-plus.open .hidden-text {
+    .text-plus.open .hidden-text {
       max-height: vw(500px);
     }
   }
@@ -3849,7 +3901,7 @@
 
   .file-upload {
     label {
-      > span {
+      > span:not(.wpcf7-form-control-wrap) {
         height: vw(60px);
         font-size: vw(20px);
         padding: vw(3px) vw(59px);
@@ -4090,7 +4142,41 @@
       margin-top: vw(20px);
     }
   }
+  .hero-news {
+    .default-hero {
+      .btn {
+        margin-top: vw(42px);
+        width: vw(260px);
+        p {
+          text-shadow: none;
+
+        }
+      }
+    }
+  }
+  .job-modal .modal-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none !important;
+    }
+  }
+  .menu>li ul {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none !important;
+    }
+  }
 }
 
 
+.header-lang {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  display: none;
+}
 
+.directors-slider .swiper-wrapper .swiper-slide {
+  //width: 24.269%;
+}
