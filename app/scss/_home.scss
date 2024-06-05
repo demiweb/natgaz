@@ -137,8 +137,13 @@ body {
   }
 }
 
+
 body {
   background: linear-gradient(#fefff9 0%, #ebf9fe 100%);
+
+  &.home {
+    background: linear-gradient(#ace6fb 0%, #008fc3 48.96%, #042844 100%);
+  }
 }
 
 .header {
@@ -792,7 +797,8 @@ body {
     font-weight: 500;
     font-size: vw(200px);
     text-align: center;
-    color: #b2d33c;
+    //color: #b2d33c;
+    color: #fff;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -806,7 +812,8 @@ body {
 
   &:nth-child(2) {
     span {
-      color: $blue;
+      //color: $blue;
+      color: #fff;
     }
   }
 
@@ -861,9 +868,11 @@ body {
 }
 
 .cards-slider {
-  width: vw(832px);
+  //width: vw(832px);
+  width: vw(950px);
   height: vw(647px);
-  margin-#{$left}: vw(-10px);
+  //margin-#{$left}: vw(-10px);
+  margin-#{$left}: vw(10px);
 
   .dots {
     gap: vw(9px);
@@ -872,7 +881,8 @@ body {
     justify-content: flex-start;
     position: absolute;
     right: vw(60px);
-    bottom: vw(-32px);
+    bottom: vw(-36px);
+    padding-#{$right}: vw(68px);
 
     .single-dot {
       width: vw(18px);
@@ -998,6 +1008,7 @@ body {
   .btn {
     margin-#{$right}: auto;
     min-width: vw(398px);
+    margin-top: auto;
   }
 
   > p {
@@ -1009,18 +1020,26 @@ body {
     margin-top: vw(7px);
     margin-#{$right}: vw(21px);
     margin-bottom: auto;
+
+    display: none;
   }
 
   .img {
     width: 100%;
     height: auto;
     margin-bottom: vw(50px);
-    max-height: vw(400px);
+    //max-height: vw(400px);
     padding-#{$right}: vw(50px);
     padding-left: vw(50px);
     display: flex;
+    border-radius: 30px;
+    overflow: hidden;
+    flex-grow: 1;
+    padding: 0;
+    backface-visibility: hidden;
 
     img {
+      margin-top: auto;
       width: 100%;
       height: auto;
       object-fit: cover;
@@ -1200,6 +1219,22 @@ body {
 
     &:hover {
       .ring {
+        background: #fff;
+
+        svg {
+          path {
+            stroke: #fff !important;
+          }
+        }
+      }
+
+      p {
+        color: #fff;
+      }
+    }
+
+    &.active {
+      .ring {
         background: $green;
 
         svg {
@@ -1211,22 +1246,6 @@ body {
 
       p {
         color: $green;
-      }
-    }
-
-    &.active {
-      .ring {
-        background: $blue;
-
-        svg {
-          path {
-            stroke: $blue !important;
-          }
-        }
-      }
-
-      p {
-        color: $blue;
       }
     }
 
@@ -1278,11 +1297,15 @@ body {
 
   .btns {
     z-index: 10;
-    top: 50%;
+    //top: 50%;
     //10px
-    left: calc(100% - 0.5208vw);
-    transform: translate(-50%, -50%);
+    //left: calc(100% - 0.5208vw);
+    //transform: translate(-50%, -50%);
     position: absolute;
+
+    bottom: vw(-52px);
+    #{$right}: vw(10px);
+    transform: none;
   }
 }
 
@@ -1438,16 +1461,19 @@ body {
 
     &:nth-child(12n - 2) {
       //32px
-      width: calc((100% / 3) - (1.6667vw / 3));
+      //width: calc((100% / 3) - (1.6667vw / 3));
+      width: calc(calc(100% / 4) - (1.2500vw / 2));
     }
 
     &:nth-child(12n - 1) {
       //32px
-      width: calc((100% / 3) - (1.6667vw / 3));
+      //width: calc((100% / 3) - (1.6667vw / 3));
+      width: calc(50% - 0.4167vw);
     }
 
     &:nth-child(12n) {
-      width: calc((100% / 3) - (1.6667vw / 3));
+      //width: calc((100% / 3) - (1.6667vw / 3));
+      width: calc(calc(100% / 4) - (1.2500vw / 2));
     }
 
     .single-news {
@@ -2007,6 +2033,7 @@ h1 {
   font-size: vw(20px);
   line-height: 1.5;
   color: #042844;
+
   .container {
     > p {
       max-width: vw(534px);
@@ -6788,4 +6815,384 @@ body {
 }
 
 
+.waves-static {
+  &.waves-static--home {
 
+
+    .sub-title {
+      color: #fff;
+      max-width: 100%;
+
+      br {
+        display: none;
+      }
+    }
+
+    .container {
+      align-items: flex-start;
+    }
+
+
+    .text {
+      color: #042844;
+
+      p {
+        color: #042844;
+      }
+    }
+
+
+    @media screen and (min-width: 768px) {
+      margin-top: vw(54px);
+      min-height: vw(935px);
+      .waves-static-text {
+        padding-top: vw(181px);
+      }
+      & + .cards-section {
+        padding-top: vw(12px);
+      }
+      .text {
+
+        p {
+          max-width: vw(384px);
+        }
+      }
+    }
+  }
+}
+
+
+.cards-section {
+  &:not(.cards-long) {
+    @media screen and (min-width: 768px) {
+      .cards-container .cards-right {
+        align-items: stretch;
+        gap: vw(4px);
+      }
+      .cards-text {
+        width: vw(400px);
+
+
+        .btn {
+          margin-bottom: vw(10px);
+        }
+      }
+    }
+
+
+    .cards-text {
+      color: #fff;
+
+      .sub-title {
+        color: #B2D33C;
+      }
+
+      p {
+        color: #fff;
+      }
+
+      .btn {
+        margin-top: auto;
+      }
+    }
+  }
+}
+
+body:not(.rtl) {
+  @media screen and (min-width: 768px) {
+    .swiper-card .img {
+      padding: 0;
+    }
+  }
+
+  .cards-section {
+    &:not(.cards-long) {
+      @media screen and (min-width: 768px) {
+        .cards-container .cards-right {
+          align-items: stretch;
+          gap: vw(24px);
+        }
+
+        .cards-slider .dots {
+          padding-left: vw(108px);
+          padding-right: 0;
+        }
+        .cards-slider {
+          .btns {
+            transform: none;
+            left: vw(-15px);
+            right: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer::before {
+  background: rgba(255, 255, 255, 0.8);
+  opacity: 1;
+}
+
+body {
+  &.home {
+    .news-block {
+      .sub-title {
+        color: $green;
+        display: inline-block;
+        @media screen and (min-width: 768px) {
+          margin-bottom: vw(31px);
+          padding-right: vw(11px);
+        }
+      }
+      .single-news {
+        .news-img {
+          display: none;
+        }
+        &.single-news__image {
+          .news-bg-text, .btn-circle {
+            display: none;
+          }
+          .news-img {
+            display: flex;
+          }
+        }
+      }
+    }
+
+    .cards-section {
+      position: relative;
+      @media screen and (min-width: 768px) {
+        padding-bottom: vw(214px);
+      }
+
+      .container {
+        position: relative;
+        z-index: 3;
+      }
+
+      @media screen and (min-width: 768px) {
+        &::after {
+          width: 100%;
+          height: vw(438px);
+          display: inline-block;
+          content: '';
+          position: absolute;
+          left: 50%;
+          bottom: vw(-153px);
+          transform: translate(-50%, 0);
+          //background: url('../img/lines-after-hero.svg') no-repeat center/ 103% 100%;
+          //background: url('../img/lines-after-hero.svg') no-repeat center/ 103% 100%;
+          background: #008FC3;
+          mask-image: url('../img/lines-after-hero.svg');
+          mask-size: 100% 100%;
+          mask-position: 0 0;
+        }
+      }
+    }
+  }
+}
+
+.single-news {
+  .news-bg-text {
+    background: rgba(255, 255, 255, 0.8) !important;
+    border: 1px solid rgba(255, 255, 255, 0);
+    transition: all 0.3s ease-in;
+
+    p {
+      font-weight: normal;
+      transition: all 0.3s ease-in;
+    }
+  }
+
+  &:hover {
+    .news-bg-text {
+      background: rgba(255, 255, 255, 1) !important;
+      border-color: $green;
+
+      p {
+        font-weight: bold;
+        color: $blue;
+      }
+    }
+  }
+}
+
+@function vw($px-vw, $base-vw: 360px) {
+  @return ($px-vw * 100vw) / $base-vw
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    &.home {
+      background: linear-gradient(180deg, #ace6fb 0%, #008fc3 48.96%, #042844 100%);;
+
+      .hero::after {
+        background: #008FC3;
+        mask-image: url(../img/hero-after-mob.svg);
+        mask-size: 100% 100%;
+        mask-position: 0 0;
+      }
+
+      .card-home-mob .sub-title {
+        display: none;
+      }
+
+      .cards-home {
+        padding-top: vw(7px);
+        padding-bottom: vw(138px);
+
+        .dots {
+          bottom: vw(95px);
+        }
+      }
+
+      .cards-home-slider {
+        height: auto;
+      }
+    }
+  }
+  .card-home-mob .sub-title {
+    color: $green;
+  }
+
+  .hero::after {
+
+  }
+  .waves-static.waves-static--home {
+    margin-top: vw(80px);
+    height: auto;
+
+    .waves-static-text {
+      padding-top: vw(14px);
+      height: auto;
+      padding-bottom: 0;
+    }
+
+    .sub-title {
+      br {
+        display: initial;
+      }
+    }
+
+    .static-image {
+      position: relative;
+      top: 0;
+      left: 0;
+      height: vw(430px);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .text-director {
+      display: flex;
+      width: 100%;
+      max-width: 100%;
+      margin-top: vw(24px);
+
+      .text {
+        display: flex;
+        color: #fff;
+        font-size: vw(16px);
+        max-width: 100%;
+        padding: 0 vw(6px);
+        line-height: 1.4;
+
+        p {
+          color: #fff;
+          font-size: vw(16px);
+          text-align: center;
+          text-shadow: none;
+          line-height: 1.4;
+        }
+
+        .sub-title {
+          display: none;
+        }
+      }
+    }
+  }
+  .waves-static--home .waves-static-text .container .sub-title {
+    text-align: center;
+    margin-top: 0;
+  }
+  .cards-home {
+    position: relative;
+
+    &::after {
+      width: 100%;
+      height: 28.33333vw;
+      display: inline-block;
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+
+      transform: translate(-50%, 0);
+      background: #D5F2FC;
+      mask-image: url(../img/hero-after-mob.svg);
+      -webkit-mask-size: 100% 100%;
+      mask-size: 100% 100%;
+      -webkit-mask-position: 0 0;
+      mask-position: 0 0;
+    }
+  }
+  body.home .news-block .sub-title {
+    color: #fff;
+  }
+  body {
+    &.home {
+      .waves-static-text .btn {
+        display: none !important;
+      }
+      .single-news .news-img {
+        height: vw(300px);
+        flex-shrink: 0;
+      }
+      .single-news .news-bg-text {
+        height: auto;
+        flex-grow: 1;
+      }
+      .news-cont .swiper {
+        height: vw(454px);
+      }
+
+      .news-cont .swiper-wrapper .swiper-slide {
+        height: 100% !important;
+      }
+
+      .news-cont .swiper-slide .single-news {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: vw(12px);
+      }
+
+      .news-block {
+
+        padding-bottom: vw(86px);
+        .single-news {
+          .news-img {
+            display: flex;
+          }
+          &.single-news__image {
+            .news-bg-text, .btn-circle {
+              display: flex;
+            }
+            .news-img {
+              display: flex;
+            }
+          }
+        }
+      }
+    }
+  }
+  .single-news .news-bg-text {
+    background: #fff !important;
+    border-color: $green;
+
+    p {
+      font-weight: bold;
+    }
+  }
+}

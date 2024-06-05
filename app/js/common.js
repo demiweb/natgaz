@@ -1142,7 +1142,7 @@ function startNewsSlider() {
                         grabCursor: true,
                         slidesPerView: 1,
                         grid: {
-                            rows: 3,
+                            rows: 1,
                         },
                         speed: 800,
 
@@ -1176,7 +1176,6 @@ function startNewsSlider() {
 startNewsSlider();
 
 //news slider
-
 
 //swipers
 
