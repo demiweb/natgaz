@@ -3,7 +3,6 @@ var syntax        = 'scss'; // Syntax: sass or scss;
 var gulp          = require('gulp'),
 		gutil         = require('gulp-util' ),
 		imagemin         = require('gulp-imagemin' ),
-		sass          = require('gulp-sass'),
 		browsersync   = require('browser-sync'),
 		concat        = require('gulp-concat'),
 		uglify        = require('gulp-uglify'),
@@ -13,6 +12,7 @@ var gulp          = require('gulp'),
 		notify        = require("gulp-notify"),
 		rigger        = require("gulp-rigger"),
 		rsync         = require('gulp-rsync');
+const sass = require('gulp-sass')(require('sass'));
 const browserSync = require('browser-sync').create();
 
 const config = {
@@ -42,15 +42,15 @@ gulp.task('browser-sync', function() {
 	})
 });
 
-gulp.task('styles', async function() {
+gulp.task('styles',  async function() {
 	gulp.src('app/'+syntax+'/**/*.'+syntax+'')
-	.pipe(sass({ outputStyle: 'expand' }).on("error", notify.onError()))
-	.pipe(rename({ suffix: '.min', prefix : '' }))
-	.pipe(autoprefixer(['last 15 versions']))
-	.pipe(cleancss( {level: { 1: { specialComments: 0 } } })) // Opt., comment out when debugging
-	// .pipe(gulp.dest('app/css'))
-	.pipe(gulp.dest('dist/css'))
-	.pipe(browserSync.stream())
+		.pipe(sass({ outputStyle: 'expanded' }).on("error", notify.onError()))
+		.pipe(rename({ suffix: '.min', prefix : '' }))
+		.pipe(autoprefixer(['last 15 versions']))
+		.pipe(cleancss( {level: { 1: { specialComments: 0 } } })) // Opt., comment out when debugging
+		// .pipe(gulp.dest('app/css'))
+		.pipe(gulp.dest('dist/css'))
+		.pipe(browserSync.stream())
 });
 
 gulp.task('html', async function() {

@@ -1,5 +1,5 @@
 @function vw($px-vw, $base-vw: 360px) {
-  @return ($px-vw * 100vw) / $base-vw
+  @return calc(($px-vw * 100vw) / $base-vw)
 }
 
 @media screen and (max-width: 767px) {
@@ -318,7 +318,7 @@
           background: url("../img/arrow-black.svg") no-repeat center / 100%;
           position: absolute;
           top: 50%;
-          #{$left}: vw(88px);
+          #{$left}: vw(18px);
           transform: translate(0, -50%);
         }
       }
@@ -3997,7 +3997,7 @@
       .menu > li > a::after {
         transform: translate(0, -50%) rotate(180deg);
         left: auto;
-        right: vw(88px);
+        right: vw(18px);
       }
 
       .btn .ic {
