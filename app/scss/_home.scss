@@ -2312,7 +2312,7 @@ h1 {
   }
 
   .hidden-text {
-    max-height: vw(600px);
+    max-height: vw(900px);
   }
 
   .btn-plus {
@@ -2656,7 +2656,7 @@ h1 {
     padding-bottom: vw(335px);
 
     .hidden-text {
-      max-height: vw(600px);
+      max-height: vw(900px);
     }
   }
 }
@@ -3159,7 +3159,9 @@ h1 {
       overflow: hidden;
       backface-visibility: hidden;
       padding: 0;
-      margin-left: vw(123px);
+      //margin-left: vw(123px);
+      margin-left: auto;
+      margin-right: auto;
       margin-bottom: vw(58px);
 
       img {
@@ -3450,7 +3452,7 @@ h1 {
       padding-top: vw(161px);
 
       .cards-text {
-        padding-top: vw(160px);
+        //padding-top: vw(160px);
 
         .sub-title {
           margin-bottom: vw(76px);
