@@ -2526,6 +2526,12 @@
     align-items: flex-start;
     justify-content: flex-start;
     margin-top: vw(53px);
+    padding-top: vw(80px);
+    > .sub-title {
+      padding-left:  vw(26px);
+      text-align: center;
+      padding-right: vw(26px);
+    }
   }
   .graph-right {
     width: 100%;
