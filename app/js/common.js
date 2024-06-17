@@ -452,7 +452,7 @@ scrollAnimations();
 
 var burger = [...document.querySelectorAll('.burger')];
 var header = document.querySelector('.header');
-var menuItemCustom = [...document.querySelectorAll('.menu-item-object-custom a')];
+var menuItemCustom = [...document.querySelectorAll('.menu-item-type-custom .menu-item-object-custom a')];
 
 function burgerControl() {
     if (burger.length) {
@@ -465,13 +465,16 @@ function burgerControl() {
 
             })
         });
-        menuItemCustom.forEach((btn) => {
+        menuItemCustom.forEach((btn, k) => {
             btn.addEventListener('click', () => {
-                header.classList.remove('active');
-                document.body.classList.remove('no-scroll');
-                burger.forEach((burg) => {
-                    burg.classList.remove('active');
-                })
+
+                    header.classList.remove('active');
+                    document.body.classList.remove('no-scroll');
+                    burger.forEach((burg) => {
+                        burg.classList.remove('active');
+                    })
+
+
             })
         })
     }
@@ -1113,6 +1116,13 @@ function startNewsSlider() {
 
     } else {
         if (window.innerWidth < 768) {
+
+            let imagesSlides = [...newsSection[0].querySelectorAll('.single-news__image')];
+
+            imagesSlides.forEach((sld2) => {
+               sld2.closest('.swiper-slide').remove();
+            });
+
             newsSection.forEach((sld) => {
                 let sldCont = sld.querySelector('.swiper');
                 let sldNext = sld.querySelector('.slider-btn--next');

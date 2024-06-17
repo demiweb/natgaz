@@ -3153,7 +3153,7 @@ h1 {
     }
 
     .swiper-card .img {
-      width: vw(536px);
+      //width: vw(536px);
       height: vw(381px);
       border-radius: vw(30px);
       overflow: hidden;
@@ -3943,6 +3943,7 @@ div:not(.footer-form) > .form {
       font-size: vw(20px);
       line-height: 1.5;
       color: #042844;
+      display: none;
 
       &::after {
         margin-left: vw(4px);
@@ -6823,6 +6824,11 @@ body {
 @media screen and (min-width: 768px) {
   .subscribe-section .text-director .btn-plus {
     bottom: vw(100px);
+  }
+  .single-news {
+    &.single-news__image {
+      pointer-events: none;
+    }
   }
 }
 
