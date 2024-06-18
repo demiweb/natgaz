@@ -1361,7 +1361,16 @@
       border-radius: 0 0 vw(28px) vw(28px);
       box-shadow: inset 0 -3px 6px rgba(0, 0, 0, 0.16);
       background: #FFFFFF;
-
+      font-weight: normal;
+      font-size: vw(16px);
+      line-height: 1.375;
+      //text-align: right;
+      color: #042844;
+      .btn-plus {
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: vw(16px);
+      }
       p {
         font-weight: normal;
         font-size: vw(16px);
@@ -1369,6 +1378,16 @@
         //text-align: right;
         color: #042844;
         width: 100%;
+      }
+      .hidden-text {
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease-out;
+      }
+      &.open {
+        .hidden-text {
+          max-height: vw(600px);
+        }
       }
     }
   }
