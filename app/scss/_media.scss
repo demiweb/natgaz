@@ -1412,7 +1412,11 @@
   }
   .modal-text {
     margin-top: vw(29px);
-
+    font-weight: normal;
+    font-size: vw(16px);
+    line-height: 1.375;
+    //text-align: right;
+    color: #042844;
     p {
       font-weight: normal;
       font-size: vw(16px);
